@@ -454,7 +454,7 @@ mean(diamonds$karat > 1)
 #### Excel
 
 ```{r, out.width = "8%", fig.align = 'left', eval = TRUE, echo = FALSE}
-knitr::include_graphics("https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Microsoft_Excel_2013_logo.svg/2000px-Microsoft_Excel_2013_logo.svg.png")
+knitr::include_graphics("https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Microsoft_Office_Excel_%282019%E2%80%93present%29.svg/1200px-Microsoft_Office_Excel_%282019%E2%80%93present%29.svg.png")
 ```
 
 In diesem Abschnitt liest du den ebenfalls sehr bekannten `titanic` Datensatz aus einem Excel Format und speicherst die Daten als `.csv`.
