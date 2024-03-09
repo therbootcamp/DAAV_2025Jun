@@ -5,7 +5,7 @@ author: "
       <a href='https://therbootcamp.github.io'>
         <i class='fas fa-home' style='font-size:1em;'></i>
       </a>
-      <a href='https://therbootcamp.github.io/EDA_2020Feb/'>
+      <a href='https://therbootcamp.github.io/EDA_2024Mar/'>
         <i class='fas fa-clock' style='font-size:1em;' ></i>
       </a>
       <a href='mailto:therbootcamp@gmail.com'>
@@ -14,7 +14,7 @@ author: "
       <a href='https://www.linkedin.com/company/basel-r-bootcamp/'>
         <i class='fab fa-linkedin' style='font-size: 1em;'></i>
       </a>
-      <a href='https://therbootcamp.github.io/EDA_2020Feb/'>
+      <a href='https://therbootcamp.github.io/EDA_2024Mar/'>
         <font style='font-style:normal;font-size:20px;padding-left:5px'>The R Bootcamp</font>
       </a>
       <br>
