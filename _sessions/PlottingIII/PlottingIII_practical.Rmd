@@ -6,7 +6,7 @@ author: "<table style='table-layout:fixed;width:100%;border:0;padding:0;margin:0
     <td style='display:block;width:100%;text-align:left;vertical-align:bottom;padding:0;margin:0;border:none' nowrap>
       <font style='font-style:normal'>Explorative Datenanalyse</font>
       <br>
-      <a href='https://therbootcamp.github.io/EDA_2022Mar/'>
+      <a href='https://therbootcamp.github.io/EDA_2024Mar/'>
         <i class='fas fa-clock' style='font-size:.9em;' ></i>
       </a>
       <a href='https://therbootcamp.github.io'>
@@ -62,7 +62,7 @@ Der Wettbewerb endet in...
 
 <script>
 // Set the date we're counting down to
-var countDownDate = new Date("Mar 5, 2022 17:15:00").getTime();
+var countDownDate = new Date("Mar 16, 2024 17:15:00").getTime();
 
 // Update the count down every 1 second
 var x = setInterval(function() {
@@ -147,7 +147,7 @@ ggsave(filename = "plot_PSEUDONYM.png",
        )
 ```
 
-5. Reiche deine Beitrag ein indem Du dein Skript, eine Abbildung, und ein selbstgewähltes Pseudonym an unsere <a href="mailto:therbootcamp@gmail.com"><b>therbootcamp@gmail.com</b></a> Mail Adresse schickst. 
+5. Reiche deine Beitrag ein indem Du dein Skript, eine Abbildung, und ein selbstgewähltes Pseudonym an unsere <a href="mailto:baselrbootcamp@gmail.com"><b>baselrbootcamp@gmail.com</b></a> Mail Adresse schickst. 
 
 6. Jeder Beitrag wird beurteilt duch eine Jury bestehend aus den Kursteilnehmern. Der Beitrag mit den meisten Punkten gewinnt.   
 

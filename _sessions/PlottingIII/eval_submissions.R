@@ -1,11 +1,4 @@
 
-require(googlesheets4)
-library(googledrive)
-library(tidyverse)
-
-id = '13fEhfM5oMrD0XqsKWJRCB_bz3v0UgDSEoQ75A1QhPgc'
-
-d = read_sheet(ss = id)
 
 inds = c(0, rep(1:11, rep(3,11)))
 
