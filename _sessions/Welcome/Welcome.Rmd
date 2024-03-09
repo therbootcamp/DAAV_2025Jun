@@ -3,7 +3,7 @@ title: "Willkommen"
 author: "Explorative Datenanalyse mit R<br>
   <a href='https://therbootcamp.github.io'>The R Bootcamp</a>
   <br>
-  <a href='https://therbootcamp.github.io/EDA_2022Mar/'>
+  <a href='https://therbootcamp.github.io/EDA_2024Mar/'>
     <i class='fas fa-clock' style='font-size:.9em;'></i>
   </a>&#8239; 
   <a href='https://therbootcamp.github.io'>
@@ -15,7 +15,7 @@ author: "Explorative Datenanalyse mit R<br>
   <a href='https://www.linkedin.com/company/basel-r-bootcamp/'>
     <i class='fab fa-linkedin' style='font-size: .9em;'></i>
   </a>"
-date: "März 2022"
+date: "März 2024"
 output:
   xaringan::moon_reader:
     css: ["default", "baselrbootcamp.css"]
@@ -43,7 +43,7 @@ layout: true
     </a>
     <a href="https://therbootcamp.github.io/">
       <font color="#7E7E7E">
-       Explorative Datenanalyse mit R | März 2022
+       Explorative Datenanalyse mit R | März 2024
       </font>
     </a>
     </span>
@@ -68,7 +68,7 @@ knitr::opts_chunk$set(fig.align = 'center')
 
 # Ziel
 
->###Das Ziel dieses Kurses ist Euch den kompetenten Umgang mit R für die Aufbereitung, Exploration, und Visualisierung von Daten zu vermitteln. 
+>###Das Ziel dieses Kurses ist es, euch den kompetenten Umgang mit R für die Aufbereitung, Exploration, und Visualisierung von Daten zu vermitteln. 
 
 ]
 
@@ -217,7 +217,7 @@ Chief Decision Scientist at Google
   <li class="m2"><span><high>Materialien</high>
   <br><br>
   <ul class="level">
-    <li><span>Immer <a href="https://therbootcamp.github.io/EDA_2020Feb/">online verfügbar</a></span></li>
+    <li><span>Immer <a href="https://therbootcamp.github.io/EDA_2024Mar/">online verfügbar</a></span></li>
   </ul>
   </span></li>
 </ul>
@@ -343,7 +343,7 @@ Chief Decision Scientist at Google
 .pull-left5[
 
 <ul>
-  <li class="m1"><span>Wie heisst Du?</span></li>
+  <li class="m1"><span>Wie heisst du?</span></li>
   <li class="m2"><span>Was ist dein Beruf?</span></li>
   <li class="m3"><span>Hast du Programmiererfahrung mit R oder anderen Programmiersprachen?</span></li>
   <li class="m4"><span>Welche Probleme möchtest du mit R lösen?</span></li>
@@ -364,4 +364,4 @@ Chief Decision Scientist at Google
 ---
 class: middle, center
 
-<h1><a href=https://therbootcamp.github.io/EDA_2022Mar/index.html>Agenda</a></h1>
+<h1><a href=https://therbootcamp.github.io/EDA_2024Mar/index.html>Agenda</a></h1>

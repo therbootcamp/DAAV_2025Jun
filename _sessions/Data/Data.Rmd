@@ -3,7 +3,7 @@ title: "Daten"
 author: "Explorative Datenanalyse mit R<br>
   <a href='https://therbootcamp.github.io'>The R Bootcamp</a>
   <br>
-  <a href='https://therbootcamp.github.io/EDA_2022Mar/'>
+  <a href='https://therbootcamp.github.io/EDA_2024Mar/'>
     <i class='fas fa-clock' style='font-size:.9em;'></i>
   </a>&#8239; 
   <a href='https://therbootcamp.github.io'>
@@ -15,7 +15,7 @@ author: "Explorative Datenanalyse mit R<br>
   <a href='https://www.linkedin.com/company/basel-r-bootcamp/'>
     <i class='fab fa-linkedin' style='font-size: .9em;'></i>
   </a>"
-date: "März 2022"
+date: "März 2024"
 output:
   xaringan::moon_reader:
     css: ["default", "baselrbootcamp.css"]
@@ -43,7 +43,7 @@ layout: true
     </a>
     <a href="https://therbootcamp.github.io/">
       <font color="#7E7E7E">
-       Explorative Datenanalyse mit R | März 2022
+       Explorative Datenanalyse mit R | März 2024
       </font>
     </a>
     </span>
@@ -123,8 +123,8 @@ basel$groesse[1:3] = c(174,180,168)
 # data frame
 
 <ul>
-  <li class="m1"><span>Eine <mono>list</mono>e bestehend aus <high><mono>vector</mono>en gleicher Länge</high>.</span></li>
-  <li class="m2"><span>Die <mono>vector</mono>en haben verschiedene <high>Klassen</high>: <mono>numeric</mono>, <mono>character</mono>, etc.</span></li>
+  <li class="m1"><span>Eine <mono>liste</mono> bestehend aus <high><mono>vectoren</mono> gleicher Länge</high>.</span></li>
+  <li class="m2"><span>Die <mono>vectoren</mono> haben verschiedene <high>Klassen</high>: <mono>numeric</mono>, <mono>character</mono>, etc.</span></li>
   <li class="m3"><span>Verschiedene Varianten: <mono>data.frame</mono>, <mono>data.table</mono>, <highm>tibble</highm>.</span></li>
 </ul>
 
@@ -211,7 +211,7 @@ basel$bildung
 
 ```{r, eval = T}
 # Teile die Variable einkommen durch 1000
-basel$einkommen <- basel$einkommen / 1000
+basel$groesse <- basel$groesse / 100
 
 # zeige data frame
 basel
@@ -793,12 +793,14 @@ require(RMySQL)
 
 ```{r}
 # Verbinge mit MySQL Datenbank
-con <- dbConnect(MySQL(), 
-         user='studiech_rbootca', 
-         password='Du*5hA+7NU:8T', 
-         dbname='studiech_rbootcamp', 
-         host='studie.ch',
-         port = 3306)
+con <- dbConnect(
+  MySQL(), 
+  user = 'studiech_rbootca', 
+  password = 'Du*5hA+7NU:8T', 
+  dbname = 'studiech_rbootcamp', 
+  host = 'studie.ch',
+  port = 3306
+)
 
 # Zeige Tabellen
 dbListTables(con)
@@ -939,6 +941,6 @@ data <- jsonlite::read_json(file, ...)
 
 class: middle, center
 
-<h1><a href="https://therbootcamp.github.io/EDA_2022Mar/_sessions/Data/Data_practical.html">Practical</a></h1>
+<h1><a href="https://therbootcamp.github.io/EDA_2024Mar/_sessions/Data/Data_practical.html">Practical</a></h1>
 
 

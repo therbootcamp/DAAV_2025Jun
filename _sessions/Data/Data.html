@@ -12,9 +12,15 @@
     <textarea id="source">
 class: center, middle, inverse, title-slide
 
+.title[
 # Daten
-### Explorative Datenanalyse mit R<br> <a href='https://therbootcamp.github.io'>The R Bootcamp</a> <br> <a href='https://therbootcamp.github.io/EDA_2022Mar/'> <i class='fas fa-clock' style='font-size:.9em;'></i> </a>  <a href='https://therbootcamp.github.io'> <i class='fas fa-home' style='font-size:.9em;' ></i> </a>  <a href='mailto:therbootcamp@gmail.com'> <i class='fas fa-envelope' style='font-size: .9em;'></i> </a>  <a href='https://www.linkedin.com/company/basel-r-bootcamp/'> <i class='fab fa-linkedin' style='font-size: .9em;'></i> </a>
-### März 2022
+]
+.author[
+### Explorative Datenanalyse mit R<br> <a href='https://therbootcamp.github.io'>The R Bootcamp</a> <br> <a href='https://therbootcamp.github.io/EDA_2024Mar/'> <i class='fas fa-clock' style='font-size:.9em;'></i> </a>  <a href='https://therbootcamp.github.io'> <i class='fas fa-home' style='font-size:.9em;' ></i> </a>  <a href='mailto:therbootcamp@gmail.com'> <i class='fas fa-envelope' style='font-size: .9em;'></i> </a>  <a href='https://www.linkedin.com/company/basel-r-bootcamp/'> <i class='fab fa-linkedin' style='font-size: .9em;'></i> </a>
+]
+.date[
+### März 2024
+]
 
 ---
 
@@ -35,7 +41,7 @@ layout: true
     &lt;/a&gt;
     &lt;a href="https://therbootcamp.github.io/"&gt;
       &lt;font color="#7E7E7E"&gt;
-       Explorative Datenanalyse mit R | März 2022
+       Explorative Datenanalyse mit R | März 2024
       &lt;/font&gt;
     &lt;/a&gt;
     &lt;/span&gt;
@@ -100,8 +106,8 @@ layout: true
 # data frame
 
 &lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;Eine &lt;mono&gt;list&lt;/mono&gt;e bestehend aus &lt;high&gt;&lt;mono&gt;vector&lt;/mono&gt;en gleicher Länge&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
-  &lt;li class="m2"&gt;&lt;span&gt;Die &lt;mono&gt;vector&lt;/mono&gt;en haben verschiedene &lt;high&gt;Klassen&lt;/high&gt;: &lt;mono&gt;numeric&lt;/mono&gt;, &lt;mono&gt;character&lt;/mono&gt;, etc.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Eine &lt;mono&gt;liste&lt;/mono&gt; bestehend aus &lt;high&gt;&lt;mono&gt;vectoren&lt;/mono&gt; gleicher Länge&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Die &lt;mono&gt;vectoren&lt;/mono&gt; haben verschiedene &lt;high&gt;Klassen&lt;/high&gt;: &lt;mono&gt;numeric&lt;/mono&gt;, &lt;mono&gt;character&lt;/mono&gt;, etc.&lt;/span&gt;&lt;/li&gt;
   &lt;li class="m3"&gt;&lt;span&gt;Verschiedene Varianten: &lt;mono&gt;data.frame&lt;/mono&gt;, &lt;mono&gt;data.table&lt;/mono&gt;, &lt;highm&gt;tibble&lt;/highm&gt;.&lt;/span&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -135,7 +141,7 @@ basel
 ## 3     3 M             31    168     53.9
 ## 4     4 M             31    166.   105  
 ## 5     5 M             24    180.   102. 
-## # … with 9,995 more rows
+## # ℹ 9,995 more rows
 ```
 ]
 
@@ -216,7 +222,7 @@ basel$bildung
 
 ```r
 # Teile die Variable einkommen durch 1000
-basel$einkommen &lt;- basel$einkommen / 1000
+basel$groesse &lt;- basel$groesse / 100
 
 # zeige data frame
 basel
@@ -226,12 +232,12 @@ basel
 ## # A tibble: 10,000 × 20
 ##      id geschlecht alter groesse gewicht
 ##   &lt;dbl&gt; &lt;chr&gt;      &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;
-## 1     1 W             44    174     NA  
-## 2     2 M             65    180     85.6
-## 3     3 M             31    168     53.9
-## 4     4 M             31    166.   105  
-## 5     5 M             24    180.   102. 
-## # … with 9,995 more rows
+## 1     1 W             44    1.74    NA  
+## 2     2 M             65    1.8     85.6
+## 3     3 M             31    1.68    53.9
+## 4     4 M             31    1.66   105  
+## 5     5 M             24    1.80   102. 
+## # ℹ 9,995 more rows
 ```
 
 ]
@@ -675,7 +681,7 @@ basel
 ## 3     3 f             34    147.
 ## 4     4 m             31    166.
 ## 5     5 m             24    180.
-## # … with 9,995 more rows
+## # ℹ 9,995 more rows
 ```
 
 ]
@@ -727,7 +733,7 @@ basel
 ## 3     3 f             34    147.
 ## 4     4 m             31    166.
 ## 5     5 m             24    180.
-## # … with 9,995 more rows
+## # ℹ 9,995 more rows
 ```
 
 ]
@@ -865,12 +871,14 @@ basel &lt;- type_convert(basel)
 
 ```r
 # Verbinge mit MySQL Datenbank
-con &lt;- dbConnect(MySQL(), 
-         user='studiech_rbootca', 
-         password='Du*5hA+7NU:8T', 
-         dbname='studiech_rbootcamp', 
-         host='studie.ch',
-         port = 3306)
+con &lt;- dbConnect(
+  MySQL(), 
+  user = 'studiech_rbootca', 
+  password = 'Du*5hA+7NU:8T', 
+  dbname = 'studiech_rbootcamp', 
+  host = 'studie.ch',
+  port = 3306
+)
 
 # Zeige Tabellen
 dbListTables(con)
@@ -909,8 +917,7 @@ basel
 
 ```
 ## # Source:   table&lt;basel&gt; [?? x 20]
-## # Database: mysql 5.7.26-log-cll-lve
-## #   [@studie.ch:/studiech_rbootcamp]
+## # Database: mysql 10.6.14-MariaDB-cll-lve-log [@studie.ch:/studiech_rbootcamp]
 ##      id geschlecht alter_jahre groesse
 ##   &lt;dbl&gt; &lt;chr&gt;            &lt;dbl&gt;   &lt;dbl&gt;
 ## 1     1 f                   87    165 
@@ -918,7 +925,7 @@ basel
 ## 3     3 f                   34    147.
 ## 4     4 m                   31    166.
 ## 5     5 m                   24    180.
-## # … with more rows
+## # ℹ more rows
 ```
 
 ]
@@ -976,20 +983,15 @@ read_html("https://en.wikipedia.org/wiki/R_(programming_language)") %&gt;%
 ```
 
 ```
-## # A tibble: 22 × 3
-##    Release Date         Description                                                       
-##    &lt;chr&gt;   &lt;chr&gt;        &lt;chr&gt;                                                             
-##  1 0.16    ""           "This is the last alpha version developed primarily by Ihaka and …
-##  2 0.49    "1997-04-23" "This is the oldest source release which is currently available o…
-##  3 0.60    "1997-12-05" "R becomes an official part of the GNU Project. The code is hoste…
-##  4 0.65.1  "1999-10-07" "First versions of update.packages and install.packages functions…
-##  5 1.0     "2000-02-29" "Considered by its developers stable enough for production use.[5…
-##  6 1.4     "2001-12-19" "S4 methods are introduced and the first version for Mac OS X is …
-##  7 1.8     "2003-10-08" "Introduced a flexible condition handling mechanism for signallin…
-##  8 2.0     "2004-10-04" "Introduced lazy loading, which enables fast loading of data with…
-##  9 2.1     "2005-04-18" "Support for UTF-8 encoding, and the beginnings of internationali…
-## 10 2.6.2   "2008-02-08" "Last version to support Windows 95, 98, Me and NT 4.0[60]"       
-## # … with 12 more rows
+## # A tibble: 6 × 3
+##   Operator                                                        Syntax Tests            
+##   &lt;chr&gt;                                                           &lt;chr&gt;  &lt;chr&gt;            
+## 1 .mw-parser-output .monospaced{font-family:monospace,monospace}&gt; a &gt; b  Is a greater tha…
+## 2 &gt;=                                                              a &gt;= b Is a greater tha…
+## 3 &lt;                                                               a &lt; b  Is a less than b?
+## 4 &lt;=                                                              a &lt;= b Is a less than o…
+## 5 ==                                                              a == b Is a equal to b? 
+## 6 !=                                                              a != b Is a not equal t…
 ```
 
 
@@ -1099,6 +1101,19 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
     deleted = true;
   });
 })();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
 (function() {
   "use strict"
   // Replace <script> tags in slides area to make them executable

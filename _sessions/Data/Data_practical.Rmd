@@ -4,7 +4,7 @@ author: "<table style='table-layout:fixed;width:100%;border:0;padding:0;margin:0
   <tr style='border:none'>
     <td style='display:block;width:100%;text-align:left;vertical-align:bottom;padding:0;margin:0;border:none' nowrap>
       <font style='font-style:normal'>Explorative Datenanalyse mit R</font><br>
-      <a href='https://therbootcamp.github.io/EDA_2022Mar/'>
+      <a href='https://therbootcamp.github.io/EDA_2024Mar/'>
         <i class='fas fa-clock' style='font-size:.9em;' ></i>
       </a>
       <a href='https://therbootcamp.github.io'>
@@ -36,8 +36,8 @@ knitr::opts_chunk$set(comment = NA,
                       fig.width = 6, 
                       fig.height = 6,
                       fig.align = 'center',
-                      echo = TRUE, 
-                      eval = TRUE, 
+                      echo = FALSE, 
+                      eval = FALSE, 
                       warning = FALSE)
 
 options(digits = 3)
@@ -102,7 +102,7 @@ library(readxl)
 
 ### B - Kreiere Vektoren
 
-Die folgende Tabelle zeigt die Daten von fünf hypothetischenn Baselern. Im ersten Teil dieses Practicals ist es zunächst deine Aufgabe diese Tabelle Schritt für Schritt **nachzubauen**.  
+Die folgende Tabelle zeigt die Daten von fünf hypothetischenn Baslern. Im ersten Teil dieses Practicals ist es zunächst deine Aufgabe diese Tabelle Schritt für Schritt **nachzubauen**.  
 
 ```{r, echo = FALSE, eval = TRUE}
 data <- basel[1:5, c("id", "geschlecht", "alter", "groesse", "gewicht")] %>%
@@ -111,7 +111,7 @@ data <- basel[1:5, c("id", "geschlecht", "alter", "groesse", "gewicht")] %>%
                          geschlecht == "f" ~ 'F'))
 
 data %>% mutate_all(function(x) {x[is.na(x)] = " ";x}) %>% 
-  knitr::kable(format = "markdown", caption = "Data über 5 Baseler")
+  knitr::kable(format = "markdown", caption = "Daten über 5 Basler")
 ```
 
 1. Erstelle zuerst einen numerischen Vektor genannt `id`, der die `id` Werte der 5 Baseler Tabelle enthält. Wenn du ihn erstellt hast, printe das Vektor-Objekt. Wann immmer du `XX` siehst, bedeutet das, dass du etwas an dessen Stelle eintragen sollst. Siehe Tabelle. 
