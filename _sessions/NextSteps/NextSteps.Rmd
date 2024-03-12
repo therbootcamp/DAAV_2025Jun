@@ -43,7 +43,7 @@ layout: true
     </a>
     <a href="https://therbootcamp.github.io/">
       <font color="#7E7E7E">
-       Explorative Datenanalyse mit R | März 2022
+       Explorative Datenanalyse mit R | März 2024
       </font>
     </a>
     </span>
