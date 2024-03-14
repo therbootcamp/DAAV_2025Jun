@@ -977,21 +977,26 @@ basel %&gt;% pull(konfession)
 
 ```r
 # Tabelle laden von Wikipedia (mit xml2 und rvest)
-read_html("https://en.wikipedia.org/wiki/R_(programming_language)") %&gt;%
-  html_node(xpath = '//*[@id="mw-content-text"]/div/table[2]') %&gt;%
+read_html("https://de.wikipedia.org/wiki/R_(Programmiersprache)") %&gt;%
+  html_node(xpath = '/html/body/div[3]/div[3]/div[5]/div[1]/table[3]') %&gt;%
   html_table() %&gt;% as_tibble()
 ```
 
 ```
-## # A tibble: 6 × 3
-##   Operator                                                        Syntax Tests            
-##   &lt;chr&gt;                                                           &lt;chr&gt;  &lt;chr&gt;            
-## 1 .mw-parser-output .monospaced{font-family:monospace,monospace}&gt; a &gt; b  Is a greater tha…
-## 2 &gt;=                                                              a &gt;= b Is a greater tha…
-## 3 &lt;                                                               a &lt; b  Is a less than b?
-## 4 &lt;=                                                              a &lt;= b Is a less than o…
-## 5 ==                                                              a == b Is a equal to b? 
-## 6 !=                                                              a != b Is a not equal t…
+## # A tibble: 18 × 5
+##     Jahr Stadt                    Land                                  Teilnehmer Website
+##    &lt;int&gt; &lt;chr&gt;                    &lt;chr&gt;                                 &lt;chr&gt;      &lt;chr&gt;  
+##  1  2004 Wien                     Osterreich Österreich                 194        useR! …
+##  2  2006 Wien                     Osterreich Österreich                 334        useR! …
+##  3  2007 Ames, Iowa               Vereinigte Staaten Vereinigte Staaten unb.       useR! …
+##  4  2008 Dortmund                 Deutschland Deutschland               387        useR! …
+##  5  2009 Rennes                   Frankreich Frankreich                 463        useR! …
+##  6  2010 Gaithersburg, Maryland   Vereinigte Staaten Vereinigte Staaten 465        useR! …
+##  7  2011 Coventry                 Vereinigtes Konigreich Vereinigtes K… 430        useR! …
+##  8  2012 Nashville, Tennessee     Vereinigte Staaten Vereinigte Staaten 469        useR! …
+##  9  2013 Albacete                 Spanien Spanien                       328        useR! …
+## 10  2014 Los Angeles, Kalifornien Vereinigte Staaten Vereinigte Staaten 604        useR! …
+## # ℹ 8 more rows
 ```
 
 
@@ -1050,7 +1055,7 @@ data &lt;- jsonlite::read_json(file, ...)
 
 class: middle, center
 
-&lt;h1&gt;&lt;a href="https://therbootcamp.github.io/EDA_2022Mar/_sessions/Data/Data_practical.html"&gt;Practical&lt;/a&gt;&lt;/h1&gt;
+&lt;h1&gt;&lt;a href="https://therbootcamp.github.io/EDA_2024Mar/_sessions/Data/Data_practical.html"&gt;Practical &lt;/a&gt;&lt;/h1&gt;
 
 
     </textarea>

@@ -883,8 +883,8 @@ options(max.print=100, width=220,tibble.width = 90,tibble.print_min = 10)
 
 ```{r, message=F}
 # Tabelle laden von Wikipedia (mit xml2 und rvest)
-read_html("https://en.wikipedia.org/wiki/R_(programming_language)") %>%
-  html_node(xpath = '//*[@id="mw-content-text"]/div/table[2]') %>%
+read_html("https://de.wikipedia.org/wiki/R_(Programmiersprache)") %>%
+  html_node(xpath = '/html/body/div[3]/div[3]/div[5]/div[1]/table[3]') %>%
   html_table() %>% as_tibble()
 ```
 
@@ -941,6 +941,6 @@ data <- jsonlite::read_json(file, ...)
 
 class: middle, center
 
-<h1><a href="https://therbootcamp.github.io/EDA_2024Mar/_sessions/Data/Data_practical.html">Practical</a></h1>
+<h1><a href="https://therbootcamp.github.io/EDA_2024Mar/_sessions/Data/Data_practical.html">Practical </a></h1>
 
 
