@@ -12,7 +12,7 @@ author: "<table style='table-layout:fixed;width:100%;border:0;padding:0;margin:0
       <a href='https://therbootcamp.github.io'>
         <i class='fas fa-home' style='font-size:.9em;'></i>
       </a>
-      <a href='mailto:therbootcamp@gmail.com'>
+      <a href='mailto:baselrbootcamp@gmail.com'>
         <i class='fas fa-envelope' style='font-size: .9em;'></i>
       </a>
       <a href='https://www.linkedin.com/company/basel-r-bootcamp/'>
@@ -46,15 +46,15 @@ options(digits = 3)
 ```
 
 <p align="center">
-<img width="100%" src="image/baseltour3.jpg" margin=0><br>
-<font style="font-size:10px">from [uber.com](https://www.uber.com/en-CH/blog/zurich/basler-fasnacht-2019/)</font>
+<img width="100%" src="https://www.sueddeutsche.de/image/sz.1.1747087/1200x675?v=1521940196" margin=0><br>
+<font style="font-size:10px">from [sueddeutsche.de](https://www.sueddeutsche.de/image/sz.1.1747087/1200x675?v=1521940196)</font>
 </p>
 
 # {.tabset}
 
 ## Überblick
 
-Beweist eure Datawrangling- und visualisierungsskills in einem Wettbewerb zur Explorativen Datenanalyse. Grabt tief in einen Datensatz um die beste, entscheidungsrelevanteste Graphik zu erstellen und damit &#127851;&#127851;&#127851; zu gewinnnen. 
+Beweist eure Datawrangling- und visualisierungsskills in einem Wettbewerb zur Explorativen Datenanalyse. Grabt tief in einen Datensatz um die beste, entscheidungsrelevanteste Grafik zu erstellen und damit einen Gutschein für Süsses zu gewinnnen. 
 
 Der Wettbewerb endet in...
 
@@ -95,15 +95,26 @@ var x = setInterval(function() {
 
 ## Auftrag
 
-Christoph Brutschin, Vorsteher des Departments für Wirtschaft, Soziales und Umwelt, und damit im Basler Regierungsrat verantworlich für das Thema Tourismus, ging es schon mal besser. In ein paar Stunden müsste er Elisabeth Ackerman, Vorsteherin des Präsidialamts, den jährlichen Tourismusbericht präsentieren und die Zahlen waren nicht was er sich erhofft hatte. Trotz aller Bemühungen waren von 2018 bis 2019 die Besucherzahlen um satte 4.1% gesunken. Christoph Brutschin hatte keine gute Erklärung für die Veränderung, aber er wusste, dass es darum jetzt auch gar nicht mehr ging. Alles was zählte war, dass er eine Werbestrategie parat hätte wie sich in 2020 die Besucherzahlen wieder steigern liessen und er wusste genau an wen er sich dafür wendet musste. Kürzlich hatte der Basler Regierungsrat eine ihm unterstellte Data Science Unit geschaffen, die es verstand in autemberaubenden Tempo die komplexesten Daten in unmittelbar entscheidungsrelevante Erkenntnisse und inhaltlich überzeugende und ästhetisch ansprechende Abbildungen zu übersetzen. Als Mitglied der Basler Data Science Unit ist es nun deine Aufgabe einem sichtlich nervösen Christoph Brutschin zu liefern was er braucht: Die eine Graphik, die sofort klarmacht an welche Besuchergruppen die Werbebemühungen fürs kommende Jahr zu richten sind. 
+Smiley-Geschwindigkeitsanzeigen sind ein präventives Mittel zur Geschwindigkeitsreduktion im Strassenverkehr. Die Anzeigen zeigen den Autofahrerinnen und Autofahrern an, ob sie die erlaubte Höchstgeschwindigkeit einhalten oder überschreiten. In Basel werden neu seit 2023 an 75 Standorten abwechslungsweise 20 Geräte zur Messung und Anzeige der Geschwindigkeit eingesetzt. Sie messen einen Monat die Geschwindigkeiten mit ausgeschalteter Anzeige. Dann werden Smiley-Geschwindigkeitsanzeigen für drei Monate aktiv geschaltet. Im Anschluss messen die Geräte nochmals einen Monat mit ausgeschalteter Anzeige.
 
-P.S. Stellt Euch vor Corona wäre nicht passiert. 
+Eure Aufgabe ist es, zu analysieren, wo die Anzeigen am dringendsten benötigt werden und ob die Anzeigen einen Effekt bei den Verkehrsteilnehmer:innen zeigen. 
 
-(Namen, Organisationen, und Orte sind Produkt der Imagination des Autors. Jede Ähnlichkeit zu existierenden Personen ist absolut zufällig.) 
+Die beste Visualisierung bekommt einen kleinen Preis von uns. Kriterien dafür sind insbesondere: der Erkenntnisgewinn aus der Visualisierung für die Verkehrssicherheit und den weiteren Einsatz der Smiley-Geschwindigkeitsanzeigen. Daneben aber auch die Klarheit und Verständlichkeit der erstellten Grafik.
+
+Quellenangabe Datensatz:
+https://data.bs.ch/explore/dataset/100277/
+
+Lizenz Datensatz:
+https://creativecommons.org/licenses/by/3.0/ch/deed.de
+
+Weiterführende Informationen:
+https://www.jsd.bs.ch/nm/2023-start-des-betriebs-der-neuen-praeventiven-smiley-geschwindigkeitsanzeigen---ab-maerz-2023-aktiv-jsd.html
 
 ### A - Vorbereitung
 
-1. Öffne dein `TheRBootcamp` R project. Es sollte die Ordner `1_Data` und `2_Code` enthalten. Stelle sicher, dass du alle Datensätze, welche im `Datensätze` Tab aufgelisted sind, in deinem `1_Data` Ordner hast. 
+0. Gehe zum Tab "Datensätze" und lade den `smiley.csv` Datensatz mit Rechtsklick -> "Ziel speichern unter" herunter, gib der Datei den Namen `smiley.csv`. Kopiere die Datei dann in den Ordner `1_Data` in deinem `TheRBootcamp` Ordner.
+
+1. Öffne dein `TheRBootcamp` R project in RStudio.
 
 2. Öffne ein neues R Skript. Schreibe deinen Namen, das Datum und "Explorative Datenanalyse Wettbewerb" als Kommentare an den Anfang des Skripts.
 
@@ -117,24 +128,23 @@ P.S. Stellt Euch vor Corona wäre nicht passiert.
 ## Modeling competition
 
 library(tidyverse)
-library(caret)
 ```
 
 ```{r, message = FALSE, warning = FALSE, echo = FALSE, eval = TRUE}
 library(tidyverse)
 ```
 
-5. Lade die beiden Datensätze `Tourismus.csv` und `Europa.csv`.
+5. Lade den Datensatz `smiley.csv`.
 
-### B Wettbewerbsregeln
+### B - Wettbewerbsregeln
 
-1. Das Ziel des Wettbewerbs ist es die **schönste**, **überzeugenste**, **entscheidungsrelevanteste** Graphik zu erstellen, die beantwortet auf welche Besuchergruppen die Basler Tourismuswerbestrategie fokussieren sollte. 
+1. Das Ziel des Wettbewerbs ist es die **schönste**, **überzeugenste**, **entscheidungsrelevanteste** Grafik zu erstellen, die beantwortet auf welche Standorte die Smiley-Anzeigen fokussieren sollten und ob sie überhaupt etwas bringen. 
 
-2. Am Wettbewerb teilzunehmen ermöglicht dir die Chance viel &#127851;&#127851;&#127851; zu gewinnen. 
+2. Am Wettbewerb teilzunehmen ermöglicht dir die Chance, einen Gutschein zu gewinnen. 
 
-3. Die nimmst am Wettbewerb teil indem du deine beste Graphik im `.png` Format und das zugehörige R Script einreichst.
+3. Du nimmst am Wettbewerb teil indem du deine beste Grafik im `.png` Format und das zugehörige R Script einreichst.
 
-4. Vor dem Einreichen, speichere deine Graphik mittels `ggsave()` (siehe code) und benenne die Datei mit einem von dir ausgewählten *Pseudonym*. Benutze das *Pseudonym* ebenfalls im Namen der `.R` Skriptdatei. 
+4. Vor dem Einreichen, speichere deine Grafik mittels `ggsave()` (siehe code) und benenne die Datei mit einem von dir ausgewählten *Pseudonym*. Benutze das *Pseudonym* ebenfalls im Namen der `.R` Skriptdatei. 
 
 ```{r}
 # speichere plot
@@ -149,9 +159,9 @@ ggsave(filename = "plot_PSEUDONYM.png",
 
 5. Reiche deine Beitrag ein indem Du dein Skript, eine Abbildung, und ein selbstgewähltes Pseudonym an unsere <a href="mailto:baselrbootcamp@gmail.com"><b>baselrbootcamp@gmail.com</b></a> Mail Adresse schickst. 
 
-6. Jeder Beitrag wird beurteilt duch eine Jury bestehend aus den Kursteilnehmern. Der Beitrag mit den meisten Punkten gewinnt.   
+6. Jeder Beitrag wird beurteilt durch eine Jury bestehend aus den Kursteilnehmern. Der Beitrag mit den meisten Punkten gewinnt.   
 
-Wichtig: Entscheidend für den Erfolg ist nicht nur die Ästhetik der Graphik, sondern auch die gewonnenen Erkenntnisse die darin dargestellt sind. Dafür kann es notwendig sein die beiden Datensätze gemeinsam zu analysieren.     
+Wichtig: Entscheidend für den Erfolg ist nicht nur die Ästhetik der Grafik, sondern auch die gewonnenen Erkenntnisse die darin dargestellt sind. Dafür kann es hilfreich sein, eigene Transformationen und Berechnungen auf Basis des Datensatzes anzustellen.     
 
 ## Rating
 
@@ -161,22 +171,24 @@ Bitte rated die einzelnen Beiträge über diesen Link (noch nicht aktiv).
 
 ```{r, eval = FALSE, echo = TRUE}
 require(tidyverse)
-require(ggthemes)
+
+smiley <- read_csv("1_Data/smiley.csv")
 
 # Erstelle plot
-mein_plot <- read_csv('1_Data/Tourismus.csv') %>%
-  inner_join(read_csv('1_Data/Europa.csv')) %>%
-  ggplot(aes(x = Besucher, 
-             y = Dauer, 
-             color = Land)) + 
-  geom_point() + 
-  facet_wrap(~Erwerbsquote < 70) +
-  theme_excel()
+mein_plot <- smiley %>% 
+  filter(phase == "Gesamt") %>% 
+  mutate(zu_schnell = case_when(
+    median_tempo >= tempolimit ~ ">= 50%",
+    TRUE ~ "< 50%",
+  )) %>% 
+  ggplot(aes(x = tempolimit, y = median_tempo)) +
+  geom_point(aes(color = zu_schnell), size = 3) +
+  labs(title = "An diesen Orten fahren 50% der Leute zu schnell") + 
+  theme_classic()
 
 # Speichere plot als png
 ggsave(filename = 'plot_DOZENTEN.png',
        plot = mein_plot,
-       device = "png",
        units = "in",
        width = 7,
        height = 5)
@@ -188,31 +200,21 @@ ggsave(filename = 'plot_DOZENTEN.png',
 
 |Datei  | Zeilen | Spalten |
 |:----|:-----|:------|
-|[Tourismus.csv](https://raw.githubusercontent.com/therbootcamp/EDA_2020Feb/master/1_Data/Tourismus.csv)| 141 | 5 |
-|[Europa.csv](https://raw.githubusercontent.com/therbootcamp/EDA_2020Feb/master/1_Data/Europa.csv)| 45 | 9 |
+|[smiley.csv](https://raw.githubusercontent.com/therbootcamp/EDA_2024Mar/main/_sessions/PlottingIII/1_Data/smiley.csv)| 68 | 9 |
 
-##### Variablenbeschreibungen `Tourismus.csv`
+##### Variablenbeschreibungen `smiley.csv`
 
-|Name  |Bedeutung |
-|:--------------------------|:-----------------------------------------|
-| `Land` | Land in dem die Besucher wohnhaft sind. |
-| `Region` | Region des Landes. |
-| `Jahr` | Jahr der Besucherzählung: `2018` oder `2019`. |
-| `Besucher` | Anzahl der Besucher.|
-| `Dauer` | Durchschnittliche Dauer des Besuchs. |
-
-##### Variablenbeschreibungen `Europa.csv`
 
 |Name  |Bedeutung |
 |:--------------------------|:-----------------------------------------|
-| `Land` | Land in dem die Besucher wohnhaft sind |
-| `Bevölkerung` | Bevölkerunggrösse des Landes. |
-| `Dichte` | Einwohner pro km2 |
-| `lo20` | % Einwohner unter 20 Lebensjahren. |
-| `hi65` | % Einwohner über 65 Lebensjahren. |
-| `Erwerbsquote` | % Einwohner mit Beschäftigung. |
-| `BIP` | Bruttoinlandsprodukt des Landes. |
-| `Motorisierung` | Anzahl Autos pro 1,000 Einwohner. |
-| `Äquivalenzeinkommen` | Kaufkraftbereinigtes durchschnittliches Jahreseinkommen in Euro. |
+| `phase` | Messphase: Vormessung (nur Messung, keine Anzeige), Betrieb (Messung inkl. Feedback an Verkehrsteilnehmer:innen), Nachmessung (nur Messung, keine Anzeige), Gesamt (alle drei Phasen zusammen) |
+| `strassenname` | Name der Strasse wo die Messung stattfand. |
+| `start_phase` | Datum an dem diese Messphase anfing. |
+| `median_tempo` | Median der gemessenen Geschwindigkeiten vorbeifahrender Fahrzeuge in km/h. |
+| `tempo_85` | 85. Perzentil der Geschwindigkeiten vorbeifahrender Fahrzeuge in km/h. |
+| `tempolimit` | Geltendes Temolimit in km/h am Messort. |
+| `anzahl_messungen` | Anzahl der Messungen in dieser Phase an diesem Standort. |
+| `link_einzelmessungen` | Link zu einem Datensatz mit detaillierten Einzelmessungen dieses Standorts in dieser Phase. |
+| `geopunkt` | Länge- und Breitegrade des Messstandorts.  |
 
 
