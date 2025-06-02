@@ -3,7 +3,7 @@
   <head>
     <title>Daten</title>
     <meta charset="utf-8" />
-    <meta name="author" content="Explorative Datenanalyse mit R  The R Bootcamp                 " />
+    <meta name="author" content="Daten aufbereiten, analysieren und visualisieren mit R  The R Bootcamp                 " />
     <script src="libs/header-attrs/header-attrs.js"></script>
     <link href="libs/remark-css/default.css" rel="stylesheet" />
     <link rel="stylesheet" href="baselrbootcamp.css" type="text/css" />
@@ -16,10 +16,10 @@ class: center, middle, inverse, title-slide
 # Daten
 ]
 .author[
-### Explorative Datenanalyse mit R<br> <a href='https://therbootcamp.github.io'>The R Bootcamp</a> <br> <a href='https://therbootcamp.github.io/EDA_2024Mar/'> <i class='fas fa-clock' style='font-size:.9em;'></i> </a>  <a href='https://therbootcamp.github.io'> <i class='fas fa-home' style='font-size:.9em;' ></i> </a>  <a href='mailto:therbootcamp@gmail.com'> <i class='fas fa-envelope' style='font-size: .9em;'></i> </a>  <a href='https://www.linkedin.com/company/basel-r-bootcamp/'> <i class='fab fa-linkedin' style='font-size: .9em;'></i> </a>
+### Daten aufbereiten, analysieren und visualisieren mit R<br> <a href='https://therbootcamp.github.io'>The R Bootcamp</a> <br> <a href='https://therbootcamp.github.io/DAAV_2025Jun/'> <i class='fas fa-clock' style='font-size:.9em;'></i> </a>  <a href='https://therbootcamp.github.io'> <i class='fas fa-home' style='font-size:.9em;' ></i> </a>  <a href='mailto:baselrbootcamp@gmail.com'> <i class='fas fa-envelope' style='font-size: .9em;'></i> </a>  <a href='https://www.linkedin.com/company/basel-r-bootcamp/'> <i class='fab fa-linkedin' style='font-size: .9em;'></i> </a>
 ]
 .date[
-### März 2024
+### Juni 2025
 ]
 
 ---
@@ -41,7 +41,7 @@ layout: true
     &lt;/a&gt;
     &lt;a href="https://therbootcamp.github.io/"&gt;
       &lt;font color="#7E7E7E"&gt;
-       Explorative Datenanalyse mit R | März 2024
+       Daten aufbereiten, analysieren und visualisieren mit R | Juni 2025
       &lt;/font&gt;
     &lt;/a&gt;
     &lt;/span&gt;
@@ -127,7 +127,7 @@ layout: true
 
 
 
-```r
+``` r
 # printe basel
 basel
 ```
@@ -157,7 +157,7 @@ basel
 # Inhalt ansehen
 
 
-```r
+``` r
 # Zeige den data frame in neuem tab
 View(basel)
 ```
@@ -179,7 +179,7 @@ View(basel)
 
 
 
-```r
+``` r
 # Extrahiere die Variable Alter
 basel$alter
 ```
@@ -190,7 +190,7 @@ basel$alter
 ##  [ reached getOption("max.print") -- omitted 9986 entries ]
 ```
 
-```r
+``` r
 # Extrahiere die Variable Bildung
 basel$bildung
 ```
@@ -220,7 +220,7 @@ basel$bildung
 # Verändern mit &lt;high&gt;`$`&lt;/high&gt;
 
 
-```r
+``` r
 # Teile die Variable einkommen durch 1000
 basel$groesse &lt;- basel$groesse / 100
 
@@ -288,7 +288,7 @@ basel
 &lt;highm&gt;numeric&lt;/highm&gt; Vektoren &lt;high&gt;beinhalten Zahlen&lt;/high&gt; und nur Zahlen.
 
 
-```r
+``` r
 # Extrahiere die Variable Alter
 basel$alter
 ```
@@ -299,7 +299,7 @@ basel$alter
 ```
 
 
-```r
+``` r
 # Zeige die Klasse von Alter
 class(basel$alter)
 ```
@@ -308,7 +308,7 @@ class(basel$alter)
 ## [1] "numeric"
 ```
 
-```r
+``` r
 # Ist Alter numeric
 is.numeric(basel$alter)
 ```
@@ -333,7 +333,7 @@ is.numeric(basel$alter)
 &lt;highm&gt;character&lt;/highm&gt; Vektoren &lt;high&gt;beinhalten alle Zeichen&lt;/high&gt; um die herum &lt;high&gt;Anführungszeichen&lt;/high&gt; stehen.
 
 
-```r
+``` r
 # Extrahiere die Variable Geschlecht
 basel$geschlecht
 ```
@@ -344,7 +344,7 @@ basel$geschlecht
 ```
 
 
-```r
+``` r
 # Extrahiere die Variable Bildung
 basel$bildung
 ```
@@ -375,7 +375,7 @@ basel$bildung
 &lt;highm&gt;character&lt;/highm&gt; Vektoren &lt;high&gt;beinhalten alle Zeichen&lt;/high&gt; um die herum &lt;high&gt;Anführungszeichen&lt;/high&gt; stehen.
 
 
-```r
+``` r
 # Extrahiere die Variable Alter
 basel$alter
 ```
@@ -386,7 +386,7 @@ basel$alter
 ```
 
 
-```r
+``` r
 # Wandle Alter in character um
 as.character(basel$alter)
 ```
@@ -413,7 +413,7 @@ as.character(basel$alter)
 &lt;highm&gt;logical&lt;/highm&gt; Vektoren werden typischerweise durch &lt;high&gt;logische Vergleiche&lt;/high&gt; erstellt und benutzt um in Data Frames oder Vektoren bestimmte &lt;high&gt;Fälle auszuwählen&lt;/high&gt;. 
 
 
-```r
+``` r
 # Welche Werte in Geschlecht sind m
 basel$geschlecht == "M"
 ```
@@ -425,7 +425,7 @@ basel$geschlecht == "M"
 ```
 
 
-```r
+``` r
 # Welche Werte in Alteer sind kleiner 30
 basel$alter &lt; 50
 ```
@@ -472,7 +472,7 @@ basel$alter &lt; 50
 # Zugriff / Ändern via `[ ]`
 
 
-```r
+``` r
 # Extrahiere die Variable Alter
 alter &lt;- basel$alter
 alter
@@ -484,7 +484,7 @@ alter
 ```
 
 
-```r
+``` r
 # Extrahiere zweiten Wert
 alter[2]
 ```
@@ -494,7 +494,7 @@ alter[2]
 ```
 
 
-```r
+``` r
 # Ändere zweiten Wert
 alter[2] &lt;- 100
 alter
@@ -662,7 +662,7 @@ Mehr Info [hier](http://rspatial.org/intr/rst/4-indexing.html).
 
 
 
-```r
+``` r
 # Lese Basel Datensatz ein
 basel &lt;- read_csv("1_Data/basel.csv")
 
@@ -714,7 +714,7 @@ basel
 
 
 
-```r
+``` r
 # Lese Basel Datensatz ein
 basel &lt;- read_csv("1_Data/basel.csv")
 
@@ -802,7 +802,7 @@ basel
 
 
 
-```r
+``` r
 # Lese Basel Datensatz ein
 basel &lt;- read_csv("1_Data/basel.csv")
 ```
@@ -835,7 +835,7 @@ basel &lt;- read_csv("1_Data/basel.csv")
 Manchmal ist es nötig `readr` etwas auf die Sprünge zu helfen, damit &lt;high&gt;Datentypen korrekt inferiert&lt;/high&gt; werden. 
 
 
-```r
+``` r
 # Setze Symbol für fehlende Werte
 basel &lt;- read_csv("1_Data/basel.csv",
                   na = c('NA'))
@@ -869,7 +869,7 @@ basel &lt;- type_convert(basel)
 
 
 
-```r
+``` r
 # Verbinge mit MySQL Datenbank
 con &lt;- dbConnect(
   MySQL(), 
@@ -909,15 +909,15 @@ dbListTables(con)
 
 
 
-```r
+``` r
 # Extrahiere Tabelle Customers
 basel &lt;- tbl(con, "basel")
 basel
 ```
 
 ```
-## # Source:   table&lt;basel&gt; [?? x 20]
-## # Database: mysql 10.6.14-MariaDB-cll-lve-log [@studie.ch:/studiech_rbootcamp]
+## # Source:   table&lt;`basel`&gt; [?? x 20]
+## # Database: mysql 10.6.20-MariaDB-cll-lve-log [@studie.ch:/studiech_rbootcamp]
 ##      id geschlecht alter_jahre groesse
 ##   &lt;dbl&gt; &lt;chr&gt;            &lt;dbl&gt;   &lt;dbl&gt;
 ## 1     1 f                   87    165 
@@ -948,7 +948,7 @@ basel
 
 
 
-```r
+``` r
 # Extrahiere Tabelle Customers
 basel &lt;- tbl(con, "basel")
 
@@ -975,10 +975,10 @@ basel %&gt;% pull(konfession)
 
 
 
-```r
+``` r
 # Tabelle laden von Wikipedia (mit xml2 und rvest)
 read_html("https://de.wikipedia.org/wiki/R_(Programmiersprache)") %&gt;%
-  html_node(xpath = '/html/body/div[3]/div[3]/div[5]/div[1]/table[3]') %&gt;%
+  html_node(xpath = '/html/body/div[2]/div/div[3]/main/div[3]/div[3]/div[1]/table[3]') %&gt;%
   html_table() %&gt;% as_tibble()
 ```
 
@@ -1007,7 +1007,7 @@ read_html("https://de.wikipedia.org/wiki/R_(Programmiersprache)") %&gt;%
 .pull-left45[
 ### `readr` &lt;img src="image/readr.png" width="50", align="right"&gt; 
 
-```r
+``` r
 # read fixed width files (can be fast)
 data &lt;- read_fwf(file, ...)
 
@@ -1017,7 +1017,7 @@ data &lt;- read_log(file, ...)
 
 ### `haven` &lt;img src="image/haven.png" width="50" align="right"&gt;
 
-```r
+``` r
 # read SAS's .sas7bat and sas7bcat files
 data &lt;- read_sas(file, ...)
 
@@ -1031,14 +1031,14 @@ data &lt;- read_sav(file, ...)
 .pull-right45[
 ### `readxl` &lt;img src="image/readxl.png" width="50" align="right"&gt;
 
-```r
+``` r
 # read Excel's .xls and xlsx files
 data &lt;- read_excel(file, ...)
 ```
 &lt;br&gt;
 ### Other
 
-```r
+``` r
 # Read Matlab .mat files
 data &lt;- R.matlab::readMat(file, ...)
 
@@ -1055,7 +1055,7 @@ data &lt;- jsonlite::read_json(file, ...)
 
 class: middle, center
 
-&lt;h1&gt;&lt;a href="https://therbootcamp.github.io/EDA_2024Mar/_sessions/Data/Data_practical.html"&gt;Practical &lt;/a&gt;&lt;/h1&gt;
+&lt;h1&gt;&lt;a href="https://therbootcamp.github.io/DAAV_2025Jun/_sessions/Data/Data_practical.html"&gt;Practical &lt;/a&gt;&lt;/h1&gt;
 
 
     </textarea>
