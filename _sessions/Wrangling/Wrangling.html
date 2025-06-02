@@ -3,7 +3,7 @@
   <head>
     <title>Wrangling</title>
     <meta charset="utf-8" />
-    <meta name="author" content="Explorative Datenanalyse mit R  The R Bootcamp                 " />
+    <meta name="author" content="Daten aufbereiten, analysieren und visualisieren mit R  The R Bootcamp                 " />
     <script src="libs/header-attrs/header-attrs.js"></script>
     <link href="libs/remark-css/default.css" rel="stylesheet" />
     <link rel="stylesheet" href="baselrbootcamp.css" type="text/css" />
@@ -16,10 +16,10 @@ class: center, middle, inverse, title-slide
 # Wrangling
 ]
 .author[
-### Explorative Datenanalyse mit R<br> <a href='https://therbootcamp.github.io'>The R Bootcamp</a> <br> <a href='https://therbootcamp.github.io/EDA_2024Mar/'> <i class='fas fa-clock' style='font-size:.9em;'></i> </a>  <a href='https://therbootcamp.github.io'> <i class='fas fa-home' style='font-size:.9em;' ></i> </a>  <a href='mailto:therbootcamp@gmail.com'> <i class='fas fa-envelope' style='font-size: .9em;'></i> </a>  <a href='https://www.linkedin.com/company/basel-r-bootcamp/'> <i class='fab fa-linkedin' style='font-size: .9em;'></i> </a>
+### Daten aufbereiten, analysieren und visualisieren mit R<br> <a href='https://therbootcamp.github.io'>The R Bootcamp</a> <br> <a href='https://therbootcamp.github.io/DAAV_2025Jun/'> <i class='fas fa-clock' style='font-size:.9em;'></i> </a>  <a href='https://therbootcamp.github.io'> <i class='fas fa-home' style='font-size:.9em;' ></i> </a>  <a href='mailto:baselrbootcamp@gmail.com'> <i class='fas fa-envelope' style='font-size: .9em;'></i> </a>  <a href='https://www.linkedin.com/company/basel-r-bootcamp/'> <i class='fab fa-linkedin' style='font-size: .9em;'></i> </a>
 ]
 .date[
-### März 2024
+### Juni 2025
 ]
 
 ---
@@ -41,7 +41,7 @@ layout: true
     &lt;/a&gt;
     &lt;a href="https://therbootcamp.github.io/"&gt;
       &lt;font color="#7E7E7E"&gt;
-       Explorative Datenanalyse mit R | März 2024
+       Daten aufbereiten, analysieren und visualisieren mit R | Juni 2025
       &lt;/font&gt;
     &lt;/a&gt;
     &lt;/span&gt;
@@ -126,7 +126,7 @@ layout: true
 
 
 
-```r
+``` r
 patienten
 ```
 
@@ -145,7 +145,7 @@ patienten
 
 
 
-```r
+``` r
 ergebnisse
 ```
 
@@ -228,7 +228,7 @@ ergebnisse
 
 
 
-```r
+``` r
 # Numerischer Vektor
 score &lt;- c(8, 4, 6, 3, 7, 3)
 score
@@ -238,7 +238,7 @@ score
 ## [1] 8 4 6 3 7 3
 ```
 
-```r
+``` r
 # Mittelwert: Base-R-style
 mean(score)
 ```
@@ -247,7 +247,7 @@ mean(score)
 ## [1] 5.167
 ```
 
-```r
+``` r
 # Mittelwert: dplyr-style
 score %&gt;%  
   mean()  
@@ -328,7 +328,7 @@ score %&gt;%
 
 
 
-```r
+``` r
 patienten
 ```
 
@@ -347,7 +347,7 @@ patienten
 
 
 
-```r
+``` r
 ergebnisse
 ```
 
@@ -371,7 +371,7 @@ ergebnisse
 .pull-left45[
 
 
-```r
+``` r
 TIBBLE %&gt;%
   rename(NEU = ALT,
          NEU = ALT)
@@ -382,7 +382,7 @@ TIBBLE %&gt;%
 .pull-right45[
 
 
-```r
+``` r
 # Starte mit Datensatz
 patienten %&gt;% 
 
@@ -412,7 +412,7 @@ patienten %&gt;%
 .pull-left45[
 
 
-```r
+``` r
 TIBBLE %&gt;%
   mutate(
    NAME1 = DEFINITION1,
@@ -426,7 +426,7 @@ TIBBLE %&gt;%
 .pull-right45[
 
 
-```r
+``` r
 patienten %&gt;% 
   rename(alter = X1, 
          bedingung = X2) %&gt;%
@@ -456,7 +456,7 @@ patienten %&gt;%
 .pull-left45[
 
 
-```r
+``` r
 TIBBLE %&gt;%
   mutate(
     NAME = case_when(
@@ -473,7 +473,7 @@ TIBBLE %&gt;%
 .pull-right45[
 
 
-```r
+``` r
 patienten %&gt;% 
   rename(alter = X1, 
          bedingung = X2) %&gt;%
@@ -514,7 +514,7 @@ patienten %&gt;%
 .pull-left4[
 
 
-```r
+``` r
 TIBBLE1 %&gt;%
   inner_join(TIBBLE2, 
              by = c("KEY"))
@@ -525,7 +525,7 @@ TIBBLE1 %&gt;%
 .pull-right5[
 
 
-```r
+``` r
 patienten %&gt;% 
   rename(alter = X1, bedingung = X2) %&gt;%
   mutate(bed_label = case_when(
@@ -553,7 +553,7 @@ patienten %&gt;%
 .pull-left4[
 
 
-```r
+``` r
 TIBBLE1 %&gt;%
   left_join(TIBBLE2, 
             by = c("KEY"))
@@ -564,7 +564,7 @@ TIBBLE1 %&gt;%
 .pull-right5[
 
 
-```r
+``` r
 patienten %&gt;% 
   rename(alter = X1, bedingung = X2) %&gt;%
   mutate(bed_label = case_when(
@@ -623,7 +623,7 @@ patienten %&gt;%
 
 
 
-```r
+``` r
 # Verbundener tibble
 patienten_ergebnisse
 ```
@@ -649,7 +649,7 @@ patienten_ergebnisse
 .pull-left4[
 
 
-```r
+``` r
 # Sortiere aufsteigend
 TIBBLE %&gt;%
   arrange(VAR1, VAR2)
@@ -663,7 +663,7 @@ TIBBLE %&gt;%
 
 .pull-right5[
 
-```r
+``` r
 patienten_ergebnisse %&gt;%
   
   # Sortiere nach bedingung
@@ -690,7 +690,7 @@ patienten_ergebnisse %&gt;%
 .pull-left4[
 
 
-```r
+``` r
 # Sortiere aufsteigend
 TIBBLE %&gt;%
   arrange(VAR1, VAR2)
@@ -704,7 +704,7 @@ TIBBLE %&gt;%
 .pull-right5[
 
 
-```r
+``` r
 patienten_ergebnisse %&gt;%
   
   # Sortiere nach beidem
@@ -733,7 +733,7 @@ patienten_ergebnisse %&gt;%
 .pull-left4[
 
 
-```r
+``` r
 # Slice mit Sequenz
 TIBBLE %&gt;%
   slice(INDEX_START:INDEX_STOP)
@@ -749,7 +749,7 @@ TIBBLE %&gt;%
 .pull-right5[
 
 
-```r
+``` r
 patienten_ergebnisse %&gt;%
   arrange(bedingung, alter) %&gt;%
 
@@ -775,7 +775,7 @@ patienten_ergebnisse %&gt;%
 .pull-left4[
 
 
-```r
+``` r
 # Slice mit Sequenz
 TIBBLE %&gt;%
   slice(INDEX_START:INDEX_STOP)
@@ -790,7 +790,7 @@ TIBBLE %&gt;%
 .pull-right5[
 
 
-```r
+``` r
 patienten_ergebnisse %&gt;%
   arrange(bedingung, alter) %&gt;%
 
@@ -817,7 +817,7 @@ patienten_ergebnisse %&gt;%
 .pull-left4[
 
 
-```r
+``` r
 # Filter mit logische Vergleichen
 TIBBLE %&gt;%
   filter(VAR1 == WERT1,
@@ -830,7 +830,7 @@ TIBBLE %&gt;%
 .pull-right5[
 
 
-```r
+``` r
 patienten_ergebnisse %&gt;%
   
   # Patienten mit alter &gt; 35
@@ -857,7 +857,7 @@ patienten_ergebnisse %&gt;%
 .pull-left4[
 
 
-```r
+``` r
 # Filter mit logische Vergleichen
 TIBBLE %&gt;%
   filter(VAR1 == WERT1,
@@ -871,7 +871,7 @@ TIBBLE %&gt;%
 .pull-right5[
 
 
-```r
+``` r
 # alter grösser 35 &amp; bed_label ist medikament
 patienten_ergebnisse %&gt;%
   filter(alter &gt; 35,
@@ -897,7 +897,7 @@ patienten_ergebnisse %&gt;%
 .pull-left4[
 
 
-```r
+``` r
 # Wähle Variablen A und B aus
 TIBBLE %&gt;% 
   select(VAR1, VAR2)
@@ -912,7 +912,7 @@ TIBBLE %&gt;%
 .pull-right5[
 
 
-```r
+``` r
 patienten_ergebnisse %&gt;%
   
   # Wähle id und bedingung aus
@@ -939,7 +939,7 @@ patienten_ergebnisse %&gt;%
 .pull-left4[
 
 
-```r
+``` r
 # Wähle Variablen A und B aus
 TIBBLE %&gt;% 
   select(VAR1, VAR2)
@@ -955,7 +955,7 @@ TIBBLE %&gt;%
 .pull-right5[
 
 
-```r
+``` r
 patienten_ergebnisse %&gt;%
   
   # Alles ausser id
@@ -979,7 +979,7 @@ patienten_ergebnisse %&gt;%
 
 class: middle, center
 
-&lt;h1&gt;&lt;a href="https://therbootcamp.github.io/EDA_2024Mar/_sessions/Wrangling/Wrangling_practical.html"&gt;Practical&lt;/a&gt;&lt;/h1&gt;
+&lt;h1&gt;&lt;a href="https://therbootcamp.github.io/DAAV_2025Jun/_sessions/Wrangling/Wrangling_practical.html"&gt;Practical&lt;/a&gt;&lt;/h1&gt;
 
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
