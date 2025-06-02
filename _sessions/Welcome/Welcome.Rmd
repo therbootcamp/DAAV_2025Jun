@@ -1,21 +1,21 @@
 ---
 title: "Willkommen"
-author: "Explorative Datenanalyse mit R<br>
+author: "Daten aufbereiten, analysieren und visualisieren mit R<br>
   <a href='https://therbootcamp.github.io'>The R Bootcamp</a>
   <br>
-  <a href='https://therbootcamp.github.io/EDA_2024Mar/'>
+  <a href='https://therbootcamp.github.io/DAAV_2025Jun/'>
     <i class='fas fa-clock' style='font-size:.9em;'></i>
   </a>&#8239; 
   <a href='https://therbootcamp.github.io'>
     <i class='fas fa-home' style='font-size:.9em;' ></i>
   </a>&#8239;
-  <a href='mailto:therbootcamp@gmail.com'>
+  <a href='mailto:baselrbootcamp@gmail.com'>
     <i class='fas fa-envelope' style='font-size: .9em;'></i>
   </a>&#8239;
   <a href='https://www.linkedin.com/company/basel-r-bootcamp/'>
     <i class='fab fa-linkedin' style='font-size: .9em;'></i>
   </a>"
-date: "März 2024"
+date: "Juni 2025"
 output:
   xaringan::moon_reader:
     css: ["default", "baselrbootcamp.css"]
@@ -43,7 +43,7 @@ layout: true
     </a>
     <a href="https://therbootcamp.github.io/">
       <font color="#7E7E7E">
-       Explorative Datenanalyse mit R | März 2024
+       Daten aufbereiten, analysieren und visualisieren mit R | Juni 2025
       </font>
     </a>
     </span>
@@ -217,7 +217,7 @@ Chief Decision Scientist at Google
   <li class="m2"><span><high>Materialien</high>
   <br><br>
   <ul class="level">
-    <li><span>Immer <a href="https://therbootcamp.github.io/EDA_2024Mar/">online verfügbar</a></span></li>
+    <li><span>Immer <a href="https://therbootcamp.github.io/DAAV_2025Jun/">online verfügbar</a></span></li>
   </ul>
   </span></li>
 </ul>
@@ -262,9 +262,9 @@ Chief Decision Scientist at Google
 .pull-right5[
 <br>
 
-  <iframe src="https://therbootcamp.github.io/EDA_2022Mar/_sessions/Data/Data_practical.html" height="480px" width = "500px"></iframe>
+  <iframe src="https://therbootcamp.github.io/DAAV_2025Jun/_sessions/Data/Data_practical.html" height="480px" width = "500px"></iframe>
 
-  Beispiel:<a href="https://therbootcamp.github.io/EDA_2022Mar/_sessions/Data/Data_practical.html"> Daten </a>
+  Beispiel:<a href="https://therbootcamp.github.io/DAAV_2025Jun/_sessions/Data/Data_practical.html"> Daten </a>
 
 ]
 
