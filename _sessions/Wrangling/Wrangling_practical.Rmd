@@ -777,8 +777,8 @@ Siehe die `dplyr` [**vignette**](https://cran.r-project.org/web/packages/dplyr/v
 ### Cheatsheet
 
 <p align="center" width="100%">
-<a href="image/data-wrangling-cheatsheet.pdf" download>
-  <img src="image/wrangling_cheat.jpg" style="width:70%"></a>
+<a href="https://rstudio.github.io/cheatsheets/data-transformation.pdf">
+  <img src="image/data-transformation.jpg" style="width:70%"></a>
   <br>
-  <font style="font-size:10px">from <a href="https://www.rstudio.com/resources/cheatsheets/">R Studio</a></font>
+  <font style="font-size:10px">von <a href="https://posit.co/resources/cheatsheets/">Posit</a></font>
 </p>

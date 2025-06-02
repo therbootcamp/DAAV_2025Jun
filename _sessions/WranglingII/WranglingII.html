@@ -3,7 +3,7 @@
   <head>
     <title>Wrangling II</title>
     <meta charset="utf-8" />
-    <meta name="author" content="Explorative Datenanalyse mit R  The R Bootcamp                 " />
+    <meta name="author" content="Daten aufbereiten, analysieren und visualisieren mit R  The R Bootcamp                 " />
     <script src="libs/header-attrs/header-attrs.js"></script>
     <link href="libs/remark-css/default.css" rel="stylesheet" />
     <link rel="stylesheet" href="baselrbootcamp.css" type="text/css" />
@@ -16,10 +16,10 @@ class: center, middle, inverse, title-slide
 # Wrangling II
 ]
 .author[
-### Explorative Datenanalyse mit R<br> <a href='https://therbootcamp.github.io'>The R Bootcamp</a> <br> <a href='https://therbootcamp.github.io/EDA_2024Mar/'> <i class='fas fa-clock' style='font-size:.9em;'></i> </a>  <a href='https://therbootcamp.github.io'> <i class='fas fa-home' style='font-size:.9em;' ></i> </a>  <a href='mailto:therbootcamp@gmail.com'> <i class='fas fa-envelope' style='font-size: .9em;'></i> </a>  <a href='https://www.linkedin.com/company/basel-r-bootcamp/'> <i class='fab fa-linkedin' style='font-size: .9em;'></i> </a>
+### Daten aufbereiten, analysieren und visualisieren mit R<br> <a href='https://therbootcamp.github.io'>The R Bootcamp</a> <br> <a href='https://therbootcamp.github.io/DAAV_2025Jun/'> <i class='fas fa-clock' style='font-size:.9em;'></i> </a>  <a href='https://therbootcamp.github.io'> <i class='fas fa-home' style='font-size:.9em;' ></i> </a>  <a href='mailto:baselrbootcamp@gmail.com'> <i class='fas fa-envelope' style='font-size: .9em;'></i> </a>  <a href='https://www.linkedin.com/company/basel-r-bootcamp/'> <i class='fab fa-linkedin' style='font-size: .9em;'></i> </a>
 ]
 .date[
-### März 2024
+### Juni 2025
 ]
 
 ---
@@ -41,7 +41,7 @@ layout: true
     &lt;/a&gt;
     &lt;a href="https://therbootcamp.github.io/"&gt;
       &lt;font color="#7E7E7E"&gt;
-       Explorative Datenanalyse mit R | März 2024
+       Explorative Daten aufbereiten, analysieren und visualisieren mit R | Juni 2025
       &lt;/font&gt;
     &lt;/a&gt;
     &lt;/span&gt;
@@ -116,7 +116,7 @@ layout: true
 .pull-right5[
 
 
-```r
+``` r
 patienten_ergebnisse
 ```
 
@@ -163,7 +163,7 @@ patienten_ergebnisse
 .pull-right5[
 
 
-```r
+``` r
 patienten_ergebnisse %&gt;%
   
   # Ändere alle numeric in character
@@ -212,7 +212,7 @@ patienten_ergebnisse %&gt;%
 .pull-right5[
 
 
-```r
+``` r
 patienten_ergebnisse %&gt;%
   
   # Ändere fehlende Werte in 110
@@ -261,7 +261,7 @@ patienten_ergebnisse %&gt;%
 .pull-right5[
 
 
-```r
+``` r
 patienten_ergebnisse %&gt;%
   
   # Entferne Zeilen mit fehlenden Werten
@@ -308,7 +308,7 @@ patienten_ergebnisse %&gt;%
 .pull-right5[
 
 
-```r
+``` r
 patienten_ergebnisse %&gt;%
   
   # Wähle spalten aus, die mit "t" beginnen
@@ -357,7 +357,7 @@ patienten_ergebnisse %&gt;%
 .pull-right5[
 
 
-```r
+``` r
 patienten_ergebnisse %&gt;%
   
   # Wähle spalten aus, die "_" beinhalten
@@ -406,7 +406,7 @@ patienten_ergebnisse %&gt;%
 .pull-right5[
 
 
-```r
+``` r
 patienten_ergebnisse %&gt;%
   
   # Spalten von alter bis t_1
@@ -469,7 +469,7 @@ patienten_ergebnisse %&gt;%
 .pull-left4[
 
 
-```r
+``` r
 # wide zu long
 TIBBLE %&gt;% 
   pivot_longer(cols = VARS,
@@ -482,7 +482,7 @@ TIBBLE %&gt;%
 .pull-right5[
 
 
-```r
+``` r
 # wide zu long
 patienten_ergebnisse %&gt;% 
   filter(bed_label == "placebo")
@@ -504,7 +504,7 @@ patienten_ergebnisse %&gt;%
 .pull-left4[
 
 
-```r
+``` r
 # wide zu long
 TIBBLE %&gt;% 
   pivot_longer(cols = VARS,
@@ -517,7 +517,7 @@ TIBBLE %&gt;%
 .pull-right5[
 
 
-```r
+``` r
 # wide zu long
 patienten_ergebnisse %&gt;% 
   filter(bed_label == "placebo") %&gt;%
@@ -546,7 +546,7 @@ patienten_ergebnisse %&gt;%
 .pull-left4[
 
 
-```r
+``` r
 # wide zu long
 TIBBLE %&gt;% 
   pivot_wider(names_from = VAR1,
@@ -559,7 +559,7 @@ TIBBLE %&gt;%
 
 
 
-```r
+``` r
 # wide zu long
 patienten_ergebnisse_lang
 ```
@@ -584,7 +584,7 @@ patienten_ergebnisse_lang
 .pull-left4[
 
 
-```r
+``` r
 # wide zu long
 TIBBLE %&gt;% 
   pivot_wider(names_from = VAR1,
@@ -597,7 +597,7 @@ TIBBLE %&gt;%
 
 
 
-```r
+``` r
 # wide zu long
 patienten_ergebnisse_lang %&gt;%
     pivot_wider(names_from = "zeit",
@@ -640,7 +640,7 @@ patienten_ergebnisse_lang %&gt;%
 
 
 
-```r
+``` r
 basel
 ```
 
@@ -677,7 +677,7 @@ basel
 
 
 
-```r
+``` r
 TIBBLE %&gt;%
   summarise(
     NAME1 = SUMMARY_FUN(VAR1),
@@ -691,7 +691,7 @@ TIBBLE %&gt;%
 .pull-right5[
 
 
-```r
+``` r
 basel %&gt;%
   
   # Berechne deskriptive Statistiken
@@ -720,7 +720,7 @@ basel %&gt;%
 
 
 
-```r
+``` r
 TIBBLE %&gt;%
   summarise_if(
     BEDINGUNG,
@@ -734,7 +734,7 @@ TIBBLE %&gt;%
 .pull-right5[
 
 
-```r
+``` r
 basel %&gt;%
   select(alter, groesse, konfession, einkommen)
 ```
@@ -763,7 +763,7 @@ basel %&gt;%
 
 
 
-```r
+``` r
 TIBBLE %&gt;%
   summarise_if(
     BEDINGUNG,
@@ -777,7 +777,7 @@ TIBBLE %&gt;%
 .pull-right5[
 
 
-```r
+``` r
 basel %&gt;%
   
   # Berechne deskriptive Statistiken
@@ -803,7 +803,7 @@ basel %&gt;%
 
 
 
-```r
+``` r
 TIBBLE %&gt;%
   summarise_if(
     BEDINGUNG,
@@ -818,7 +818,7 @@ TIBBLE %&gt;%
 .pull-right5[
 
 
-```r
+``` r
 basel %&gt;%
   
   # Berechne deskriptive Statistiken
@@ -852,7 +852,7 @@ basel %&gt;%
 .pull-left4[
 
 
-```r
+``` r
 TIBBLE %&gt;%
   group_by(GRUPPEN_VAR) %&gt;%
   summarise(
@@ -867,7 +867,7 @@ TIBBLE %&gt;%
 .pull-right5[
 
 
-```r
+``` r
 basel %&gt;%
   
   # Gruppiere nach geschlecht
@@ -897,7 +897,7 @@ basel %&gt;%
 .pull-left4[
 
 
-```r
+``` r
 TIBBLE %&gt;%
   group_by(GRUPPEN_VAR) %&gt;%
   summarise(
@@ -915,7 +915,7 @@ TIBBLE %&gt;%
 
 
 
-```r
+``` r
 basel %&gt;%
   
   # Gruppiere nach geschlecht
@@ -944,7 +944,7 @@ basel %&gt;%
 .pull-left4[
 
 
-```r
+``` r
 TIBBLE %&gt;%
   group_by(GRUPPEN_VAR) %&gt;%
   summarise(
@@ -959,7 +959,7 @@ TIBBLE %&gt;%
 .pull-right5[
 
 
-```r
+``` r
 basel %&gt;%
   
   # Gruppiere nach geschlecht
@@ -989,7 +989,7 @@ basel %&gt;%
 .pull-left4[
 
 
-```r
+``` r
 TIBBLE %&gt;%
   group_by(GRUPPEN_VAR) %&gt;%
   summarise(
@@ -1004,7 +1004,7 @@ TIBBLE %&gt;%
 .pull-right5[
 
 
-```r
+``` r
 basel %&gt;%
   
   # Gruppiere nach geschlecht
@@ -1035,7 +1035,7 @@ basel %&gt;%
 .pull-left4[
 
 
-```r
+``` r
 TIBBLE %&gt;%
   group_by(GRUPPEN_VAR) %&gt;%
   summarise(
@@ -1050,7 +1050,7 @@ TIBBLE %&gt;%
 .pull-right5[
 
 
-```r
+``` r
 basel %&gt;%
   
   # Gruppiere nach geschlecht
@@ -1082,7 +1082,7 @@ basel %&gt;%
 .pull-left4[
 
 
-```r
+``` r
 TIBBLE %&gt;%
   group_by(GRUPPEN_VAR) %&gt;%
   summarise(
@@ -1097,7 +1097,7 @@ TIBBLE %&gt;%
 .pull-right5[
 
 
-```r
+``` r
 basel %&gt;%
   
   # Gruppiere nach geschlecht
@@ -1121,7 +1121,7 @@ basel %&gt;%
 
 class: middle, center
 
-&lt;h1&gt;&lt;a href="https://therbootcamp.github.io/EDA_2024Mar/_sessions/WranglingII/WranglingII_practical.html"&gt;Practical&lt;/a&gt;&lt;/h1&gt;
+&lt;h1&gt;&lt;a href="https://therbootcamp.github.io/DAAV_2025Jun/_sessions/WranglingII/WranglingII_practical.html"&gt;Practical&lt;/a&gt;&lt;/h1&gt;
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
