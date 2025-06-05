@@ -3,7 +3,7 @@
   <head>
     <title>Plotting</title>
     <meta charset="utf-8" />
-    <meta name="author" content="Explorative Datenanalyse mit R  The R Bootcamp                 " />
+    <meta name="author" content="Daten aufbereiten, analysieren und visualisieren mit R  The R Bootcamp                 " />
     <script src="libs/header-attrs/header-attrs.js"></script>
     <link href="libs/remark-css/default.css" rel="stylesheet" />
     <link rel="stylesheet" href="baselrbootcamp.css" type="text/css" />
@@ -16,10 +16,10 @@ class: center, middle, inverse, title-slide
 # Plotting
 ]
 .author[
-### Explorative Datenanalyse mit R<br> <a href='https://therbootcamp.github.io'>The R Bootcamp</a> <br> <a href='https://therbootcamp.github.io/EDA_2024Mar/'> <i class='fas fa-clock' style='font-size:.9em;'></i> </a>  <a href='https://therbootcamp.github.io'> <i class='fas fa-home' style='font-size:.9em;' ></i> </a>  <a href='mailto:therbootcamp@gmail.com'> <i class='fas fa-envelope' style='font-size: .9em;'></i> </a>  <a href='https://www.linkedin.com/company/basel-r-bootcamp/'> <i class='fab fa-linkedin' style='font-size: .9em;'></i> </a>
+### Daten aufbereiten, analysieren und visualisieren mit R<br> <a href='https://therbootcamp.github.io'>The R Bootcamp</a> <br> <a href='https://therbootcamp.github.io/DAAV_2025Jun/'> <i class='fas fa-clock' style='font-size:.9em;'></i> </a>  <a href='https://therbootcamp.github.io'> <i class='fas fa-home' style='font-size:.9em;' ></i> </a>  <a href='mailto:baselrbootcamp@gmail.com'> <i class='fas fa-envelope' style='font-size: .9em;'></i> </a>  <a href='https://www.linkedin.com/company/basel-r-bootcamp/'> <i class='fab fa-linkedin' style='font-size: .9em;'></i> </a>
 ]
 .date[
-### März 2024
+### Juni 2025
 ]
 
 ---
@@ -41,7 +41,7 @@ layout: true
     &lt;/a&gt;
     &lt;a href="https://therbootcamp.github.io/"&gt;
       &lt;font color="#7E7E7E"&gt;
-       Explorative Datenanalyse mit R | März 2024
+       Daten aufbereiten, analysieren und visualisieren mit R | Juni 2025
       &lt;/font&gt;
     &lt;/a&gt;
     &lt;/span&gt;
@@ -71,7 +71,7 @@ layout: true
 &lt;br&gt;
 
 
-```r
+``` r
 # Histogram in base R
 hist(x = basel$alter,
      xlab = "Alter",
@@ -106,7 +106,7 @@ hist(x = basel$alter,
 
 
 
-```r
+``` r
 # Boxplot in base R
 boxplot(formula = groesse ~ geschlecht,
         data = basel,
@@ -140,7 +140,7 @@ boxplot(formula = groesse ~ geschlecht,
 
 
 
-```r
+``` r
 # Scatterplot in base R
 plot(x = basel$groesse,
      y = basel$einkommen,
@@ -326,7 +326,7 @@ plot(x = basel$groesse,
 .pull-right45[
 
 
-```r
+``` r
 ggplot(data = mpg)
 ```
 
@@ -359,7 +359,7 @@ ggplot(data = mpg)
 .pull-right45[
 
 
-```r
+``` r
 ggplot(data = mpg,
        mapping = aes(x = displ, y = hwy))
 ```
@@ -381,7 +381,7 @@ ggplot(data = mpg,
 &lt;br&gt;
 
 
-```r
+``` r
 ggplot(data = mpg,
        mapping = aes(x = displ,
                      y = hwy)) + 
@@ -441,7 +441,7 @@ ggplot(data = mpg,
 &lt;br&gt;
 
 
-```r
+``` r
 ggplot(data = mpg,
   mapping = aes(x = displ, y = hwy)) + 
   geom_count()
@@ -461,7 +461,7 @@ ggplot(data = mpg,
 &lt;br&gt;
 
 
-```r
+``` r
 ggplot(data = mpg,
   mapping = aes(x = class)) + 
   geom_bar()
@@ -482,7 +482,7 @@ ggplot(data = mpg,
 &lt;br&gt;
 
 
-```r
+``` r
 ggplot(data = mpg,
   mapping = aes(x = class,
                 y = hwy)) + 
@@ -501,7 +501,7 @@ ggplot(data = mpg,
 &lt;br&gt;
 
 
-```r
+``` r
 ggplot(data = mpg,
   mapping = aes(x = class,
                 y = hwy)) + 
@@ -550,7 +550,7 @@ ggplot(data = mpg,
 
 
 
-```r
+``` r
 ggplot(data = mpg,
        mapping = aes(x = displ, 
                      y = hwy,
@@ -603,7 +603,7 @@ ggplot(data = mpg,
 &lt;/ul&gt;
 
 
-```r
+``` r
 ggplot(data = mpg, 
        mapping = aes(x = displ, y = hwy,
                      col = class)) +
@@ -638,7 +638,7 @@ ggplot(data = mpg,
 &lt;/ul&gt;
 
 
-```r
+``` r
 ggplot(data = mpg, 
        mapping = aes(x = displ, y = hwy,
                      col = class)) +
@@ -671,7 +671,7 @@ ggplot(data = mpg,
 
 
 
-```r
+``` r
 ggplot(data = mpg, 
        mapping = aes(x = displ, y = hwy,
                      col = class)) +
@@ -704,7 +704,7 @@ ggplot(data = mpg,
 
 
 
-```r
+``` r
 ggplot(data = mpg, 
        mapping = aes(x = displ, y = hwy,
                      col = class)) +
@@ -755,7 +755,7 @@ ggplot(data = mpg,
 &lt;/ul&gt;
 
 
-```r
+``` r
 ggplot(...) +
   labs(x = "Hubraum in Litern",
        y = "Autobahn Meilen pro Gallone",
@@ -815,7 +815,7 @@ ggplot(...) +
 .pull-right45[
 
 
-```r
+``` r
 ggplot(...) + theme_gray()
 ```
 
@@ -847,7 +847,7 @@ ggplot(...) + theme_gray()
 .pull-right45[
 
 
-```r
+``` r
 ggplot(...) + theme_classic()
 ```
 
@@ -879,7 +879,7 @@ ggplot(...) + theme_classic()
 .pull-right45[
 
 
-```r
+``` r
 ggplot(...) + theme_void()
 ```
 
@@ -911,7 +911,7 @@ ggplot(...) + theme_void()
 .pull-right45[
 
 
-```r
+``` r
 ggplot(...) + theme_excel()
 ```
 
@@ -943,7 +943,7 @@ ggplot(...) + theme_excel()
 .pull-right45[
 
 
-```r
+``` r
 ggplot(...) + theme_economist()
 ```
 
@@ -977,7 +977,7 @@ ggplot(...) + theme_economist()
 .pull-right45[
 
 
-```r
+``` r
 ggplot(...) + theme_bw()
 ```
 
@@ -993,7 +993,7 @@ ggplot(...) + theme_bw()
 .pull-left45[
 
 
-```r
+``` r
 ggplot(data = mpg, 
        mapping = aes(x = displ, y = hwy, 
                      col = class)) +
@@ -1022,7 +1022,7 @@ ggplot(data = mpg,
 
 class: middle, center
 
-&lt;h1&gt;&lt;a href="https://therbootcamp.github.io/EDA_2024Mar/_sessions/Plotting/Plotting_practical.html"&gt;Practical&lt;/a&gt;&lt;/h1&gt;
+&lt;h1&gt;&lt;a href="https://therbootcamp.github.io/DAAV_2025Jun/_sessions/Plotting/Plotting_practical.html"&gt;Practical&lt;/a&gt;&lt;/h1&gt;
 
 
 
