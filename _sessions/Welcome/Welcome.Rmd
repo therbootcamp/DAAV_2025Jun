@@ -364,4 +364,4 @@ Chief Decision Scientist at Google
 ---
 class: middle, center
 
-<h1><a href=https://therbootcamp.github.io/EDA_2024Mar/index.html>Agenda</a></h1>
+<h1><a href=https://therbootcamp.github.io/DAAV_2025Jun/index.html>Agenda</a></h1>
