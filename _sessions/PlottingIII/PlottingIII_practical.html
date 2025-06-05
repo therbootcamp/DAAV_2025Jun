@@ -9,12 +9,12 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
-<meta name="author" content="     Explorative Datenanalyse                The R Bootcamp         " />
+<meta name="author" content="     Daten aufbereiten, analysieren und visualisieren mit R               The R Bootcamp       " />
 
 
 <title>Wettbewerb: Explorative Datenanalyse</title>
 
-<script src="PlottingIII_practical_files/header-attrs-2.21/header-attrs.js"></script>
+<script src="PlottingIII_practical_files/header-attrs-2.27/header-attrs.js"></script>
 <script src="PlottingIII_practical_files/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="PlottingIII_practical_files/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
@@ -168,17 +168,18 @@ pre code {
 <col width='10%'><br />
 <tr style="border:none"><br />
 <td style="display:block;width:100%;text-align:left;vertical-align:bottom;padding:0;margin:0;border:none" nowrap><br />
-<font style='font-style:normal'>Explorative Datenanalyse</font> <br>
-<a href='https://therbootcamp.github.io/EDA_2024Mar/'>
+<font style='font-style:normal'>Daten aufbereiten, analysieren und
+visualisieren mit R</font><br>
+<a href='https://therbootcamp.github.io/DAAV_2025Jun/'>
 <i class='fas fa-clock' style='font-size:.9em;' ></i> </a>
 <a href='https://therbootcamp.github.io'>
 <i class='fas fa-home' style='font-size:.9em;'></i> </a>
 <a href='mailto:baselrbootcamp@gmail.com'>
 <i class='fas fa-envelope' style='font-size: .9em;'></i> </a>
-<a href='https://www.linkedin.com/company/basel-r-bootcamp/'>
+<a href='https://www.linkedin.com/company/rbootcamp'>
 <i class='fab fa-linkedin' style='font-size: .9em;'></i> </a>
 <a href='https://therbootcamp.github.io'>
-<font style='font-style:normal'>The R Bootcamp</font> </a>  <br />
+<font style='font-style:normal'>The R Bootcamp</font> </a><br />
 </td><br />
 <td style="width:100%;vertical-align:bottom;text-align:right;padding:0;margin:0;border:none"><br />
 <img src='https://raw.githubusercontent.com/therbootcamp/therbootcamp.github.io/master/_sessions/_image/by-sa.png' style='height:15px;width:80px'/><br />
@@ -190,9 +191,9 @@ pre code {
 
 
 <p align="center">
-<img width="100%" src="https://www.sueddeutsche.de/image/sz.1.1747087/1200x675?v=1521940196" margin=0><br>
+<img width="100%" src="image/smiley.webp" margin=0><br>
 <font style="font-size:10px">from <a
-href="https://www.sueddeutsche.de/image/sz.1.1747087/1200x675?v=1521940196">sueddeutsche.de</a></font>
+href="https://www.bazonline.ch/mit-mahnenden-smileys-gegen-temposuender-828282289819">bazonline.ch</a></font>
 </p>
 <div id="section" class="section level1 tabset">
 <h1 class="tabset"></h1>
@@ -209,7 +210,7 @@ einen Gutschein für Süsses zu gewinnnen.</p>
 <p></font></p>
 <script>
 // Set the date we're counting down to
-var countDownDate = new Date("Mar 16, 2024 17:30:00").getTime();
+var countDownDate = new Date("Jun 7, 2025 17:15:00").getTime();
 
 // Update the count down every 1 second
 var x = setInterval(function() {
@@ -306,16 +307,6 @@ einreichst.</p></li>
 <code>ggsave()</code> (siehe code) und benenne die Datei mit einem von
 dir ausgewählten <em>Pseudonym</em>. Benutze das <em>Pseudonym</em>
 ebenfalls im Namen der <code>.R</code> Skriptdatei.</p></li>
-</ol>
-<pre class="r"><code># speichere plot
-ggsave(filename = &quot;plot_PSEUDONYM.png&quot;,
-       plot = mein_plot,
-       device = &quot;png&quot;,       
-       units = &#39;in&#39;,
-       width = 5,         # ggf. vergrössern/verkleinern
-       height = 5         # ggf. vergrössern/verkleinern
-       )</code></pre>
-<ol start="5" style="list-style-type: decimal">
 <li><p>Reiche deine Beitrag ein indem Du dein Skript, eine Abbildung,
 und ein selbstgewähltes Pseudonym an unsere
 <a href="mailto:baselrbootcamp@gmail.com"><b><a
@@ -370,14 +361,14 @@ ggsave(filename = &#39;plot_DOZENTEN.png&#39;,
 <col width="38%" />
 </colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th align="left">Datei</th>
 <th align="left">Zeilen</th>
 <th align="left">Spalten</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td align="left"><a
 href="https://raw.githubusercontent.com/therbootcamp/EDA_2024Mar/main/_sessions/PlottingIII/1_Data/smiley.csv">smiley.csv</a></td>
 <td align="left">68</td>
@@ -393,52 +384,52 @@ href="https://raw.githubusercontent.com/therbootcamp/EDA_2024Mar/main/_sessions/
 <col width="60%" />
 </colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th align="left">Name</th>
 <th align="left">Bedeutung</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td align="left"><code>phase</code></td>
 <td align="left">Messphase: Vormessung (nur Messung, keine Anzeige),
 Betrieb (Messung inkl. Feedback an Verkehrsteilnehmer:innen),
 Nachmessung (nur Messung, keine Anzeige), Gesamt (alle drei Phasen
 zusammen)</td>
 </tr>
-<tr class="even">
+<tr>
 <td align="left"><code>strassenname</code></td>
 <td align="left">Name der Strasse wo die Messung stattfand.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td align="left"><code>start_phase</code></td>
 <td align="left">Datum an dem diese Messphase anfing.</td>
 </tr>
-<tr class="even">
+<tr>
 <td align="left"><code>median_tempo</code></td>
 <td align="left">Median der gemessenen Geschwindigkeiten vorbeifahrender
 Fahrzeuge in km/h.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td align="left"><code>tempo_85</code></td>
 <td align="left">85. Perzentil der Geschwindigkeiten vorbeifahrender
 Fahrzeuge in km/h.</td>
 </tr>
-<tr class="even">
+<tr>
 <td align="left"><code>tempolimit</code></td>
 <td align="left">Geltendes Temolimit in km/h am Messort.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td align="left"><code>anzahl_messungen</code></td>
 <td align="left">Anzahl der Messungen in dieser Phase an diesem
 Standort.</td>
 </tr>
-<tr class="even">
+<tr>
 <td align="left"><code>link_einzelmessungen</code></td>
 <td align="left">Link zu einem Datensatz mit detaillierten
 Einzelmessungen dieses Standorts in dieser Phase.</td>
 </tr>
-<tr class="odd">
+<tr>
 <td align="left"><code>geopunkt</code></td>
 <td align="left">Länge- und Breitegrade des Messstandorts.</td>
 </tr>
