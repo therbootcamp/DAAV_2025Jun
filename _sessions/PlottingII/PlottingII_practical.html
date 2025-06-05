@@ -9,12 +9,12 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
-<meta name="author" content="     Explorative Datenanalyse mit R               The R Bootcamp       " />
+<meta name="author" content="     Daten aufbereiten, analysieren und visualisieren mit R               The R Bootcamp       " />
 
 
 <title>Plotting II</title>
 
-<script src="PlottingII_practical_files/header-attrs-2.21/header-attrs.js"></script>
+<script src="PlottingII_practical_files/header-attrs-2.27/header-attrs.js"></script>
 <script src="PlottingII_practical_files/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="PlottingII_practical_files/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
@@ -168,12 +168,13 @@ pre code {
 <col width='10%'><br />
 <tr style="border:none"><br />
 <td style="display:block;width:100%;text-align:left;vertical-align:bottom;padding:0;margin:0;border:none" nowrap><br />
-<font style='font-style:normal'>Explorative Datenanalyse mit
-R</font><br> <a href='https://therbootcamp.github.io/EDA_2024Mar/'>
+<font style='font-style:normal'>Daten aufbereiten, analysieren und
+visualisieren mit R</font><br>
+<a href='https://therbootcamp.github.io/DAAV_2025Jun/'>
 <i class='fas fa-clock' style='font-size:.9em;' ></i> </a>
 <a href='https://therbootcamp.github.io'>
 <i class='fas fa-home' style='font-size:.9em;'></i> </a>
-<a href='mailto:therbootcamp@gmail.com'>
+<a href='mailto:baselrbootcamp@gmail.com'>
 <i class='fas fa-envelope' style='font-size: .9em;'></i> </a>
 <a href='https://www.linkedin.com/company/rbootcamp'>
 <i class='fab fa-linkedin' style='font-size: .9em;'></i> </a>
@@ -258,47 +259,19 @@ verschiedener Verbrechen.</p>
   labs(title = &quot;Verbrechen&quot;,
        subtitle = &quot;Haeufigkeit und Nutzung öffentlicher Verkehrsmittel&quot;) +
   theme_minimal()</code></pre>
-<pre class="r"><code>ggplot(verbrechen, aes(x = prozent_metro, 
-                       y = haeufigkeit)) +
-  geom_point(alpha = .3) +
-  labs(title = &quot;Verbrechen&quot;,
-       subtitle = &quot;Haeufigkeit und Nutzung öffentlicher Verkehrsmittel&quot;) +
-  theme_minimal()</code></pre>
-<p><img src="PlottingII_practical_files/figure-html/unnamed-chunk-4-1.png" width="576" style="display: block; margin: auto;" /></p>
 <ol start="2" style="list-style-type: decimal">
-<li>Sieht noch nicht so informativ aus. Ergänze
+<li><p>Sieht noch nicht so informativ aus. Ergänze
 <code>scale_x_continuous(trans = 'pseudo_log')</code> und
 <code>scale_y_continuous(trans = 'pseudo_log')</code> um die y und
-x-Achse zu stauchen. Später noch mehr zu Skalierungen.</li>
-</ol>
-<pre class="r"><code>ggplot(verbrechen, aes(x = prozent_metro, 
-                       y = haeufigkeit)) +
-  geom_point(alpha = .3) +
-  labs(title = &quot;Verbrechen&quot;,
-       subtitle = &quot;Haeufigkeit und Nutzung öffentlicher Verkehrsmittel&quot;) +
-  scale_x_continuous(trans = &#39;pseudo_log&#39;) + 
-  scale_y_continuous(trans = &#39;pseudo_log&#39;)</code></pre>
-<p><img src="PlottingII_practical_files/figure-html/unnamed-chunk-5-1.png" width="576" style="display: block; margin: auto;" /></p>
-<ol start="3" style="list-style-type: decimal">
-<li>Besser, oder? Jetzt zeichnet sich ein schwach positiver Zusammenhang
-ab. Könnte das anders aussehen, wenn man die verschiedenen Klassen von
-Verbrechen differenziert? Versuche dies mal mit der Verwendung
-verschiedener Farben indem du <code>verbrechen</code> dem
-<code>col</code> Argument in <code>aes()</code> zuweist.</li>
-</ol>
-<pre class="r"><code>ggplot(verbrechen, aes(x = prozent_metro, 
-                       y = haeufigkeit,
-                       col = verbrechen)) +
-  geom_point(alpha = .3) +
-  labs(title = &quot;Verbrechen&quot;,
-       subtitle = &quot;Haeufigkeit und Nutzung öffentlicher Verkehrsmittel&quot;) +
-  scale_x_continuous(trans = &#39;pseudo_log&#39;) + 
-  scale_y_continuous(trans = &#39;pseudo_log&#39;)</code></pre>
-<p><img src="PlottingII_practical_files/figure-html/unnamed-chunk-6-1.png" width="576" style="display: block; margin: auto;" /></p>
-<ol start="4" style="list-style-type: decimal">
-<li>Wieder nicht wirklich informativ, oder? Anstatt mit <code>col</code>
-versuche nun die verschiedenen Verbrechen mit <code>facet_wrap()</code>
-zu differenzieren. Siehe unten.</li>
+x-Achse zu stauchen. Später noch mehr zu Skalierungen.</p></li>
+<li><p>Besser, oder? Jetzt zeichnet sich ein schwach positiver
+Zusammenhang ab. Könnte das anders aussehen, wenn man die verschiedenen
+Klassen von Verbrechen differenziert? Versuche dies mal mit der
+Verwendung verschiedener Farben indem du <code>verbrechen</code> dem
+<code>col</code> Argument in <code>aes()</code> zuweist.</p></li>
+<li><p>Wieder nicht wirklich informativ, oder? Anstatt mit
+<code>col</code> versuche nun die verschiedenen Verbrechen mit
+<code>facet_wrap()</code> zu differenzieren. Siehe unten.</p></li>
 </ol>
 <pre class="r"><code>ggplot(XX, aes(x = XX, 
                y = XX)) +
@@ -308,15 +281,6 @@ zu differenzieren. Siehe unten.</li>
   scale_x_continuous(trans = &#39;pseudo_log&#39;) + 
   scale_y_continuous(trans = &#39;pseudo_log&#39;) +
   facet_wrap(~ XX)</code></pre>
-<pre class="r"><code>ggplot(verbrechen, aes(x = prozent_metro, 
-                       y = haeufigkeit)) +
-  geom_point(alpha = .2) +
-  labs(title = &quot;Verbrechen&quot;,
-       subtitle = &quot;Haeufigkeit und Nutzung öffentlicher Verkehrsmittel&quot;) +
-  scale_x_continuous(trans = &#39;pseudo_log&#39;) + 
-  scale_y_continuous(trans = &#39;pseudo_log&#39;) +
-  facet_wrap(~verbrechen)</code></pre>
-<p><img src="PlottingII_practical_files/figure-html/unnamed-chunk-8-1.png" width="576" style="display: block; margin: auto;" /></p>
 <ol start="5" style="list-style-type: decimal">
 <li>Es zeichnet sich ab, dass nicht alle Verbrechen gleich mit dem
 Anteil Metro-Fahrender zusammenhängen. Der stärkste Zusammenhang scheint
@@ -336,15 +300,6 @@ Funktion schreiben.</li>
   scale_x_continuous(trans = &#39;pseudo_log&#39;) + 
   scale_y_continuous(trans = &#39;pseudo_log&#39;) +
   facet_grid(XX &gt; 10 ~ XX)</code></pre>
-<pre class="r"><code>ggplot(verbrechen, aes(x = prozent_metro, 
-                       y = haeufigkeit)) +
-  geom_point(alpha = .2) +
-  labs(title = &quot;Verbrechen&quot;,
-       subtitle = &quot;Haeufigkeit und Nutzung öffentlicher Verkehrsmittel&quot;) +
-  scale_x_continuous(trans = &#39;pseudo_log&#39;) + 
-  scale_y_continuous(trans = &#39;pseudo_log&#39;) + 
-  facet_grid(prozent_armut &gt; 10 ~ verbrechen)</code></pre>
-<p><img src="PlottingII_practical_files/figure-html/unnamed-chunk-10-1.png" width="576" style="display: block; margin: auto;" /></p>
 <ol start="6" style="list-style-type: decimal">
 <li>Relativ eindeutig: Die Anzahl Metro-fahrender ist nur mit Verbrechen
 assoziiert, wenn die Bezirke eine hohe Armut aufweisen. Gleichzeitig
@@ -362,15 +317,6 @@ Variable in <code>facet_grid()</code> aus.</li>
   scale_x_continuous(trans = &#39;pseudo_log&#39;) + 
   scale_y_continuous(trans = &#39;pseudo_log&#39;) +
   facet_grid(XX &gt; 5000 ~ XX)</code></pre>
-<pre class="r"><code>ggplot(verbrechen, aes(x = prozent_metro, 
-                       y = haeufigkeit)) +
-  geom_point(alpha = .2) +
-  labs(title = &quot;Verbrechen&quot;,
-       subtitle = &quot;Haeufigkeit und Nutzung öffentlicher Verkehrsmittel&quot;) +
-  scale_x_continuous(trans = &#39;pseudo_log&#39;) + 
-  scale_y_continuous(trans = &#39;pseudo_log&#39;) + 
-  facet_grid(bevoelkerung_dichte &gt; 5000 ~ verbrechen)</code></pre>
-<p><img src="PlottingII_practical_files/figure-html/unnamed-chunk-12-1.png" width="576" style="display: block; margin: auto;" /></p>
 <ol start="7" style="list-style-type: decimal">
 <li>Der Zusammenhang ist verschwunden. Die Anzahl der Metro-Fahrer ist
 stark mit der Bevölkerungsdichte assoziert und diese wiederum mit der
@@ -388,15 +334,6 @@ als ein <code>gg</code> Objekt mit Namen
 <code>verbrechen_gg</code>.</li>
 </ol>
 <pre class="r"><code>verbrechen_gg &lt;- XX</code></pre>
-<pre class="r"><code>verbrechen_gg &lt;- ggplot(verbrechen, 
-                        aes(x = prozent_metro, 
-                            y = haeufigkeit)) +
-  geom_point(alpha = .2) +
-  labs(title = &quot;Verbrechen&quot;,
-       subtitle = &quot;Haeufigkeit und Nutzung öffentlicher Verkehrsmittel&quot;) +
-  scale_x_continuous(trans = &#39;pseudo_log&#39;) + 
-  scale_y_continuous(trans = &#39;pseudo_log&#39;) + 
-  facet_grid(bevoelkerung_dichte &gt; 5000 ~ verbrechen)</code></pre>
 <ol start="2" style="list-style-type: decimal">
 <li>Ändere die Farbe des Hintergrunds des Panels zu
 <code>"white"</code>. Verwende hierzu das <code>panel.background</code>
@@ -407,11 +344,6 @@ Helferfunktion.</li>
   theme(
     panel.background = element_rect(fill = XX)
     )</code></pre>
-<pre class="r"><code>verbrechen_gg + 
-  theme(
-    panel.background = element_rect(fill = &#39;white&#39;)
-    )</code></pre>
-<p><img src="PlottingII_practical_files/figure-html/unnamed-chunk-16-1.png" width="576" style="display: block; margin: auto;" /></p>
 <ol start="3" style="list-style-type: decimal">
 <li>Als nächstes, ändere die Farbe der Haupt- und Nebenlinien zu
 <code>"grey75"</code> und deren Grössen zu <code>.25</code> und
@@ -425,13 +357,6 @@ Helferfunktion <code>element_line()</code>.</li>
     panel.grid.major = element_line(color = XX, size = XX),
     panel.grid.minor = element_line(color = XX, size = XX)
     )</code></pre>
-<pre class="r"><code>verbrechen_gg + 
-  theme(
-    panel.background = element_rect(fill = &#39;white&#39;),
-    panel.grid.major = element_line(color = &#39;grey75&#39;, size = .25),
-    panel.grid.minor = element_line(color = &#39;grey75&#39;, size = .1)
-    )</code></pre>
-<p><img src="PlottingII_practical_files/figure-html/unnamed-chunk-18-1.png" width="576" style="display: block; margin: auto;" /></p>
 <ol start="4" style="list-style-type: decimal">
 <li>Ändere nun die Farbe des Hintergunds der Panel-Überschriften zu
 <code>white</code>. Verwende das <code>strip.background</code> Argument
@@ -444,14 +369,6 @@ und wiederum die <code>element_rect()</code> Helferfunktion.</li>
     panel.grid.minor = element_line(color = XX, size = XX),
     strip.background = element_rect(fill = XX),
     )</code></pre>
-<pre class="r"><code>verbrechen_gg + 
-  theme(
-    panel.background = element_rect(fill = &#39;white&#39;),
-    panel.grid.major = element_line(color = &#39;grey75&#39;, size = .25),
-    panel.grid.minor = element_line(color = &#39;grey75&#39;, size = .1),
-    strip.background = element_rect(fill = &#39;white&#39;)
-    )</code></pre>
-<p><img src="PlottingII_practical_files/figure-html/unnamed-chunk-20-1.png" width="576" style="display: block; margin: auto;" /></p>
 <ol start="5" style="list-style-type: decimal">
 <li>Nun ändere die Schriftart der Überschriften zu <code>italic</code>
 mit dem <code>face</code> Argument, setze den Text rechtsbündig
@@ -468,15 +385,6 @@ und die genannten Argumente in <code>element_text()</code>. Siehe
     strip.background = element_rect(fill = XX),
     strip.text = element_text(face = XX, size = XX, hjust = XX)
     )</code></pre>
-<pre class="r"><code>verbrechen_gg + 
-  theme(
-    panel.background = element_rect(fill = &#39;white&#39;),
-    panel.grid.major = element_line(color = &#39;grey75&#39;, size = .25),
-    panel.grid.minor = element_line(color = &#39;grey75&#39;, size = .1),
-    strip.background = element_rect(fill = &#39;white&#39;),
-    strip.text = element_text(face = &#39;italic&#39;, size = 12, hjust = 1)
-    )</code></pre>
-<p><img src="PlottingII_practical_files/figure-html/unnamed-chunk-22-1.png" width="576" style="display: block; margin: auto;" /></p>
 <ol start="6" style="list-style-type: decimal">
 <li>Setze noch die Schriftgrösse der Achsenbeschriftungen auf
 <code>12</code> und setze jeweils einen Abstand von <code>10</code>.
@@ -495,17 +403,6 @@ Verwende hierzu die Argumente <code>axis.title.x</code> und
     axis.title.x = element_text(size = XX, margin = margin(t = XX)),
     axis.title.y = element_text(size = XX, margin = margin(r = XX)),
     )</code></pre>
-<pre class="r"><code>verbrechen_gg + 
-  theme(
-    panel.background = element_rect(fill = &#39;white&#39;),
-    panel.grid.major = element_line(color = &#39;grey75&#39;, size = .25),
-    panel.grid.minor = element_line(color = &#39;grey75&#39;, size = .1),
-    strip.background = element_rect(fill = &#39;white&#39;),
-    strip.text = element_text(face = &#39;italic&#39;, size = 12, hjust = 1),
-    axis.title.x = element_text(size = 12, margin = margin(t = 10)),
-    axis.title.y = element_text(size = 12, margin = margin(r = 10))
-    )</code></pre>
-<p><img src="PlottingII_practical_files/figure-html/unnamed-chunk-24-1.png" width="576" style="display: block; margin: auto;" /></p>
 <ol start="7" style="list-style-type: decimal">
 <li>Abschliessend erhöhe den Abstand zwischen den Panels auf
 <code>1.1</code> in der Einheit <code>"lines"</code> mittels des
@@ -523,18 +420,6 @@ Funktion.</li>
     axis.title.y = element_text(size = XX, margin = margin(r = XX)),
     panel.spacing = unit(XX, units = XX)
     )</code></pre>
-<pre class="r"><code>verbrechen_gg + 
-  theme(
-    panel.background = element_rect(fill = &#39;white&#39;),
-    panel.grid.major = element_line(color = &#39;grey75&#39;, size = .25),
-    panel.grid.minor = element_line(color = &#39;grey75&#39;, size = .1),
-    strip.background = element_rect(fill = &#39;white&#39;),
-    strip.text = element_text(face = &#39;italic&#39;, size = 12, hjust = 1),
-    axis.title.x = element_text(size = 12, margin = margin(t = 10)),
-    axis.title.y = element_text(size = 12, margin = margin(r = 10)),
-    panel.spacing = unit(1.1, units = &quot;lines&quot;)
-    )</code></pre>
-<p><img src="PlottingII_practical_files/figure-html/unnamed-chunk-26-1.png" width="576" style="display: block; margin: auto;" /></p>
 </div>
 <div id="e---mein-theme-objekt" class="section level3">
 <h3>E - Mein <code>theme()</code> Objekt</h3>
@@ -547,16 +432,6 @@ in ein eigenes Objekt mit dem Namen <code>mein_theme</code>.</li>
   XX = XX,
   ...
   )</code></pre>
-<pre class="r"><code>mein_theme &lt;- theme(
-    panel.background = element_rect(fill = &#39;white&#39;),
-    panel.grid.major = element_line(color = &#39;grey75&#39;, size = .25),
-    panel.grid.minor = element_line(color = &#39;grey75&#39;, size = .1),
-    strip.background = element_rect(fill = &#39;white&#39;),
-    strip.text = element_text(face = &#39;italic&#39;, size = 12, hjust = 1),
-    axis.title.x = element_text(size = 12, margin = margin(t = 10)),
-    axis.title.y = element_text(size = 12, margin = margin(r = 10)),
-    panel.spacing = unit(1.1, units = &quot;lines&quot;)
-    )</code></pre>
 <ol start="2" style="list-style-type: decimal">
 <li>Jetzt kreiere einen neuen Plot mit anderen Variablen als zuvor und
 ergänze <code>mein_theme</code> (Ohne Klammern).</li>
@@ -606,21 +481,6 @@ gibt. Weise im Code unten <code>staat</code> dem Argument
   mein_theme
 
 verbrechen_gg</code></pre>
-<pre class="r"><code>verbrechen_gg &lt;- ggplot(data = verbrechen, 
-                        mapping = aes(x = prozent_metro, 
-                                     y = haeufigkeit,
-                                     col = staat,
-                                     size = bevoelkerung)) +
-  geom_point(alpha = .5) +
-  labs(title = &quot;Verbrechen&quot;,
-       subtitle = &quot;Haeufigkeit und Nutzung öffentlicher Verkehrsmittel&quot;) +
-  scale_x_continuous(trans = &#39;pseudo_log&#39;) + 
-  scale_y_continuous(trans = &#39;pseudo_log&#39;) + 
-  facet_wrap(~ verbrechen) +
-  mein_theme
-
-verbrechen_gg</code></pre>
-<p><img src="PlottingII_practical_files/figure-html/unnamed-chunk-32-1.png" width="576" style="display: block; margin: auto;" /></p>
 <ol start="2" style="list-style-type: decimal">
 <li>Als erstes verwende <code>scale_size()</code> und darin das
 <code>range</code> argument um die Grösse der Punkte zu verkleinern.
@@ -630,8 +490,6 @@ Werte für die untere und obere Grenze aus, die jeweils kleiner als
 und Überlappung zu finden.</li>
 </ol>
 <pre class="r"><code>verbrechen_gg + scale_size(range = c(XX, XX))</code></pre>
-<pre class="r"><code>verbrechen_gg + scale_size(range = c(.5, 3))</code></pre>
-<p><img src="PlottingII_practical_files/figure-html/unnamed-chunk-34-1.png" width="576" style="display: block; margin: auto;" /></p>
 <ol start="3" style="list-style-type: decimal">
 <li>Nun ändere die Farben mit <code>scale_color_colorblind()</code>
 (spezifische Version von <code>scale_color_gradient()</code>), so dass
@@ -641,10 +499,6 @@ sind.</li>
 <pre class="r"><code>verbrechen_gg + 
   scale_size(range = c(XX, XX)) + 
   scale_color_colorblind()</code></pre>
-<pre class="r"><code>verbrechen_gg + 
-  scale_size(range = c(.5, 3)) + 
-  scale_color_colorblind()</code></pre>
-<p><img src="PlottingII_practical_files/figure-html/unnamed-chunk-36-1.png" width="576" style="display: block; margin: auto;" /></p>
 <ol start="5" style="list-style-type: decimal">
 <li>Alternativ kann man die Farbskala selbst setzen. Verwende
 <code>scale_color_manual()</code> und die <code>viridis()</code>
@@ -656,10 +510,6 @@ berücksichtigt.</li>
 <pre class="r"><code>verbrechen_gg + 
   scale_size(range = c(XX, XX)) + 
   scale_color_manual(values = viridis(7))</code></pre>
-<pre class="r"><code>verbrechen_gg +
-  scale_size(range = c(.5, 3)) + 
-  scale_color_manual(values = viridis(7))</code></pre>
-<p><img src="PlottingII_practical_files/figure-html/unnamed-chunk-38-1.png" width="576" style="display: block; margin: auto;" /></p>
 <ol start="6" style="list-style-type: decimal">
 <li>Ok, sieht ganz ordentlich aus, oder? Kann man aber bestimmt noch
 verbessern. Go explore!</li>
@@ -678,12 +528,6 @@ dem Namen <code>verbrechen.pdf</code> zu speichern. Danach solltest du
 deinen Plot im Ordner <code>3_Figures</code> finden. Schaue nach und
 öffne die Datei.</p></li>
 </ol>
-<pre class="r"><code>ggsave(filename = &quot;3_Figures/verbrechen.pdf&quot;, 
-       device = &quot;pdf&quot;, 
-       plot = verbrechen_gg,
-       width = 4, 
-       height = 4, 
-       units = &quot;in&quot;)</code></pre>
 <pre class="r"><code>ggsave(filename = &quot;3_Figures/verbrechen.pdf&quot;, 
        device = &quot;pdf&quot;, 
        plot = verbrechen_gg,
@@ -835,14 +679,14 @@ ggsave(filename = &quot;mein_plot_name&quot;,
 <col width="38%" />
 </colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th align="left">Datei</th>
 <th align="left">Zeilen</th>
 <th align="left">Spalten</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td align="left"><a
 href="https://raw.githubusercontent.com/therbootcamp/Intro2R_Unibe/master/_sessions/PlottingII/1_Data/crime.csv">verbrechen.csv</a></td>
 <td align="left">7497</td>
@@ -857,57 +701,57 @@ Repository”.</p>
 <h4>Variablenbeschreibungen</h4>
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th align="left">Variable</th>
 <th align="left">Beschreibung</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td align="left">gemeinde</td>
 <td align="left">Name der Gemeinde</td>
 </tr>
-<tr class="even">
+<tr>
 <td align="left">staat</td>
 <td align="left">Kürzel des US Staats</td>
 </tr>
-<tr class="odd">
+<tr>
 <td align="left">bevoelkerung</td>
 <td align="left">Bevölkerungs</td>
 </tr>
-<tr class="even">
+<tr>
 <td align="left">bevoelkerung_dichte</td>
 <td align="left">Dichte der Bevölkerungs</td>
 </tr>
-<tr class="odd">
+<tr>
 <td align="left">haushalt_groesse</td>
 <td align="left">Durchschnittliche Haushaltsgrösse</td>
 </tr>
-<tr class="even">
+<tr>
 <td align="left">median_einkommen</td>
 <td align="left">Median Einkommen</td>
 </tr>
-<tr class="odd">
+<tr>
 <td align="left">prozent_pension</td>
 <td align="left">Prozent in Pension befindlicher Einwohner</td>
 </tr>
-<tr class="even">
+<tr>
 <td align="left">prozent_armut</td>
 <td align="left">Prozent in Armut lebender Einwohner</td>
 </tr>
-<tr class="odd">
+<tr>
 <td align="left">prozent_arbeitslos</td>
 <td align="left">Prozent arbeitsloser Einwohner</td>
 </tr>
-<tr class="even">
+<tr>
 <td align="left">prozent_metro</td>
 <td align="left">Prozent Metro-fahrender Einwohner</td>
 </tr>
-<tr class="odd">
+<tr>
 <td align="left">verbrechen</td>
 <td align="left">Art des Verbrechen</td>
 </tr>
-<tr class="even">
+<tr>
 <td align="left">haeufigkeit</td>
 <td align="left">Häufigkeit des Verbrechens</td>
 </tr>
@@ -921,21 +765,21 @@ Repository”.</p>
 <h3>Paket</h3>
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th align="left">Paket</th>
 <th align="left">Installation</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td align="left"><code>tidyverse</code></td>
 <td align="left"><code>install.packages("tidyverse")</code></td>
 </tr>
-<tr class="even">
+<tr>
 <td align="left"><code>viridis</code></td>
 <td align="left"><code>install.packages("viridis")</code></td>
 </tr>
-<tr class="odd">
+<tr>
 <td align="left"><code>patchwork</code></td>
 <td align="left"><code>install.packages("patchwork")</code></td>
 </tr>
@@ -952,19 +796,19 @@ Repository”.</p>
 <col width="80%" />
 </colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th align="left">Function</th>
 <th align="left">Package</th>
 <th align="left">Description</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td align="left"><code>facet_wrap()</code></td>
 <td align="left"><code>ggplot2</code></td>
 <td align="left">Kreiere Facetting mit automatischen Zeilenbrüchen</td>
 </tr>
-<tr class="even">
+<tr>
 <td align="left"><code>facet_grid()</code></td>
 <td align="left"><code>ggplot2</code></td>
 <td align="left">Kreiere Facetting in Tabellenform</td>
@@ -979,34 +823,34 @@ Repository”.</p>
 <col width="80%" />
 </colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th align="left">Function</th>
 <th align="left">Package</th>
 <th align="left">Description</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td align="left"><code>theme()</code></td>
 <td align="left"><code>ggplot2</code></td>
 <td align="left">Ändere <code>theme</code>s</td>
 </tr>
-<tr class="even">
+<tr>
 <td align="left"><code>element_rect()</code></td>
 <td align="left"><code>ggplot2</code></td>
 <td align="left">Helferfunktion für Flächen</td>
 </tr>
-<tr class="odd">
+<tr>
 <td align="left"><code>element_line()</code></td>
 <td align="left"><code>ggplot2</code></td>
 <td align="left">Helferfunktion für Linien</td>
 </tr>
-<tr class="even">
+<tr>
 <td align="left"><code>element_text()</code></td>
 <td align="left"><code>ggplot2</code></td>
 <td align="left">Helferfunktion für Text</td>
 </tr>
-<tr class="odd">
+<tr>
 <td align="left"><code>element_blank()</code></td>
 <td align="left"><code>ggplot2</code></td>
 <td align="left">Helferfunktion für das Entfernen von Elementen</td>
@@ -1021,34 +865,34 @@ Repository”.</p>
 <col width="80%" />
 </colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th align="left">Function</th>
 <th align="left">Package</th>
 <th align="left">Description</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td align="left"><code>scale_x_*()</code>, <code>scale_y_*()</code></td>
 <td align="left"><code>ggplot2</code></td>
 <td align="left">Skaliert die x- und y-Achsen</td>
 </tr>
-<tr class="even">
+<tr>
 <td align="left"><code>scale_size_*()</code></td>
 <td align="left"><code>ggplot2</code></td>
 <td align="left">Skaliert Grössen</td>
 </tr>
-<tr class="odd">
+<tr>
 <td align="left"><code>scale_color_*()</code></td>
 <td align="left"><code>ggplot2</code></td>
 <td align="left">Skaliert Farben</td>
 </tr>
-<tr class="even">
+<tr>
 <td align="left"><code>scale_fill_*()</code></td>
 <td align="left"><code>ggplot2</code></td>
 <td align="left">Skaliert Füllfarben</td>
 </tr>
-<tr class="odd">
+<tr>
 <td align="left"><code>scale_alpha_*()</code></td>
 <td align="left"><code>ggplot2</code></td>
 <td align="left">Skaliert Transparenz</td>
@@ -1072,11 +916,10 @@ mit inspirierenden <code>ggplot2</code> Beispielen.</p></li>
 <div id="cheatsheets" class="section level3">
 <h3>Cheatsheets</h3>
 <p align="center" width="100%">
-<a href="https://www.rstudio.com/wp-content/uploads/2015/03/ggplot2-cheatsheet.pdf">
-<img src="http://www.rstudio.com/wp-content/uploads/2015/03/ggplot2-cheatsheet.png" style="width:70%"></a>
-<br> <font style="font-size:10px">from
-<a href="https://www.rstudio.com/resources/cheatsheets/">R
-Studio</a></font>
+<a href="https://posit.co/resources/cheatsheets/">
+<img src="image/cheatsheet.png" style="width:70%"></a> <br>
+<font style="font-size:10px">from
+<a href="https://posit.co/resources/cheatsheets/">R Studio</a></font>
 </p>
 </div>
 </div>

@@ -3,7 +3,7 @@
   <head>
     <title>Plotting II</title>
     <meta charset="utf-8" />
-    <meta name="author" content="Explorative Datenanalyse mit R  The R Bootcamp                 " />
+    <meta name="author" content="Daten aufbereiten, analysieren und visualisieren mit R  The R Bootcamp                 " />
     <script src="libs/header-attrs/header-attrs.js"></script>
     <link href="libs/remark-css/default.css" rel="stylesheet" />
     <link rel="stylesheet" href="baselrbootcamp.css" type="text/css" />
@@ -16,10 +16,10 @@ class: center, middle, inverse, title-slide
 # Plotting II
 ]
 .author[
-### Explorative Datenanalyse mit R<br> <a href='https://therbootcamp.github.io'>The R Bootcamp</a> <br> <a href='https://therbootcamp.github.io/EDA_2024Mar/'> <i class='fas fa-clock' style='font-size:.9em;'></i> </a>  <a href='https://therbootcamp.github.io'> <i class='fas fa-home' style='font-size:.9em;' ></i> </a>  <a href='mailto:therbootcamp@gmail.com'> <i class='fas fa-envelope' style='font-size: .9em;'></i> </a>  <a href='https://www.linkedin.com/company/basel-r-bootcamp/'> <i class='fab fa-linkedin' style='font-size: .9em;'></i> </a>
+### Daten aufbereiten, analysieren und visualisieren mit R<br> <a href='https://therbootcamp.github.io'>The R Bootcamp</a> <br> <a href='https://therbootcamp.github.io/DAAV_2025Jun/'> <i class='fas fa-clock' style='font-size:.9em;'></i> </a>  <a href='https://therbootcamp.github.io'> <i class='fas fa-home' style='font-size:.9em;' ></i> </a>  <a href='mailto:baselrbootcamp@gmail.com'> <i class='fas fa-envelope' style='font-size: .9em;'></i> </a>  <a href='https://www.linkedin.com/company/basel-r-bootcamp/'> <i class='fab fa-linkedin' style='font-size: .9em;'></i> </a>
 ]
 .date[
-### März 2024
+### Juni 2025
 ]
 
 ---
@@ -41,7 +41,7 @@ layout: true
     &lt;/a&gt;
     &lt;a href="https://therbootcamp.github.io/"&gt;
       &lt;font color="#7E7E7E"&gt;
-       Explorative Datenanalyse mit R | März 2024
+       Daten aufbereiten, analysieren und visualisieren mit R | Juni 2025
       &lt;/font&gt;
     &lt;/a&gt;
     &lt;/span&gt;
@@ -85,13 +85,13 @@ layout: true
 .pull-left45[
 
 &lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;Die &lt;mono&gt;ggplot&lt;/mono&gt; generiert ein &lt;high&gt;&lt;mono&gt;gg&lt;/mono&gt; Objekt&lt;/high&gt;, dass gespeichert werden kann.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Die &lt;mono&gt;ggplot&lt;/mono&gt; Funktion generiert ein &lt;high&gt;&lt;mono&gt;gg&lt;/mono&gt; Objekt&lt;/high&gt;, dass gespeichert werden kann.&lt;/span&gt;&lt;/li&gt;
   &lt;li class="m2"&gt;&lt;span&gt;&lt;mono&gt;gg&lt;/mono&gt; Objekte können durch &lt;mono&gt;+&lt;/mono&gt; beliebig &lt;high&gt;verändert/erweitert&lt;/high&gt; werden&lt;/span&gt;&lt;/li&gt;
   &lt;li class="m3"&gt;&lt;span&gt;Ausführen des Objekts generiert den Plot.&lt;/span&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 
-```r
+``` r
 # Weise Plot Objekt zu
 mein_plot &lt;- ggplot(data = mpg,
                     aes(x = displ,y = hwy)) + 
@@ -110,7 +110,7 @@ class(mein_plot)
 .pull-right45[
 
 
-```r
+``` r
 mein_plot 
 ```
 
@@ -125,13 +125,13 @@ mein_plot
 .pull-left45[
 
 &lt;ul&gt;
-  &lt;li class="m1"&gt;&lt;span&gt;Die &lt;mono&gt;ggplot&lt;/mono&gt; generiert ein &lt;high&gt;&lt;mono&gt;gg&lt;/mono&gt; Objekt&lt;/high&gt;, dass gespeichert werden kann.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Die &lt;mono&gt;ggplot&lt;/mono&gt; Funktion generiert ein &lt;high&gt;&lt;mono&gt;gg&lt;/mono&gt; Objekt&lt;/high&gt;, dass gespeichert werden kann.&lt;/span&gt;&lt;/li&gt;
   &lt;li class="m2"&gt;&lt;span&gt;&lt;mono&gt;gg&lt;/mono&gt; Objekte können durch &lt;mono&gt;+&lt;/mono&gt; beliebig &lt;high&gt;verändert/erweitert&lt;/high&gt; werden&lt;/span&gt;&lt;/li&gt;
   &lt;li class="m3"&gt;&lt;span&gt;Ausführen des Objekts generiert den Plot.&lt;/span&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 
-```r
+``` r
 # Weise Plot Objekt zu
 mein_plot &lt;- ggplot(data = mpg,
                     aes(x = displ,y = hwy)) + 
@@ -150,7 +150,7 @@ class(mein_plot)
 .pull-right45[
 
 
-```r
+``` r
 mein_plot + geom_smooth()
 ```
 
@@ -175,7 +175,7 @@ mein_plot + geom_smooth()
 &lt;/ul&gt;
 
 
-```r
+``` r
 # Ohne facetting
 ggplot(data = mpg, 
        mapping = aes(x = displ, 
@@ -207,7 +207,7 @@ ggplot(data = mpg,
 &lt;/ul&gt;
 
 
-```r
+``` r
 # Ohne facetting
 ggplot(data = mpg, 
        mapping = aes(x = displ, 
@@ -240,7 +240,7 @@ ggplot(data = mpg,
 &lt;/ul&gt;
 
 
-```r
+``` r
 # Ohne facetting
 ggplot(data = mpg, 
        mapping = aes(x = displ, 
@@ -276,7 +276,7 @@ ggplot(data = mpg,
 &lt;/ul&gt;
 
 
-```r
+``` r
 # Verwendung von theme
 mein_plot + 
   theme(argument = element_*(), 
@@ -309,7 +309,7 @@ mein_plot +
 &lt;/ul&gt;
 
 
-```r
+``` r
 # Ändere den Hintergrund
 mein_plot + 
   theme(
@@ -343,7 +343,7 @@ mein_plot +
 &lt;/ul&gt;
 
 
-```r
+``` r
 # Ändere das Raster
 mein_plot + 
   theme(
@@ -377,7 +377,7 @@ mein_plot +
 &lt;/ul&gt;
 
 
-```r
+``` r
 # Ändere das Raster
 mein_plot + 
   theme(
@@ -415,7 +415,7 @@ mein_plot +
 &lt;/ul&gt;
 
 
-```r
+``` r
 # Ändere die Achsen
 mein_plot + 
   theme(
@@ -454,7 +454,7 @@ mein_plot +
 &lt;/ul&gt;
 
 
-```r
+``` r
 # change grid line color
 mein_plot + 
   theme(
@@ -585,7 +585,7 @@ mein_plot +
 .pull-left45[
 
 
-```r
+``` r
 mein_theme &lt;- theme(
   panel.background = 
     element_rect(fill = 'tomato'), 
@@ -613,7 +613,7 @@ mein_theme &lt;- theme(
 
 
 
-```r
+``` r
 mein_plot
 ```
 
@@ -628,7 +628,7 @@ mein_plot
 .pull-left45[
 
 
-```r
+``` r
 mein_theme &lt;- theme(
   panel.background = 
     element_rect(fill = 'tomato'), 
@@ -656,7 +656,7 @@ mein_theme &lt;- theme(
 
 
 
-```r
+``` r
 mein_plot + mein_theme
 ```
 
@@ -689,7 +689,7 @@ mein_plot + mein_theme
 
 
 
-```r
+``` r
 mein_plot
 ```
 
@@ -723,7 +723,7 @@ mein_plot
 
 
 
-```r
+``` r
 mein_plot + 
   scale_x_continuous(limits = c(1, 30))
 ```
@@ -757,7 +757,7 @@ mein_plot +
 
 
 
-```r
+``` r
 mein_plot + 
   scale_x_reverse()
 ```
@@ -791,7 +791,7 @@ mein_plot +
 
 
 
-```r
+``` r
 mein_plot + 
   scale_colour_hue(h = c(160, 260))
 ```
@@ -825,7 +825,7 @@ mein_plot +
 
 
 
-```r
+``` r
 mein_plot + 
   scale_size(range = c(1, 15))
 ```
@@ -859,7 +859,7 @@ mein_plot +
 &lt;br&gt;
 
 
-```r
+``` r
 # Speichere plots
 schoen &lt;- mein_plot
 unschoen &lt;- mein_plot + mein_theme
@@ -870,7 +870,7 @@ unschoen &lt;- mein_plot + mein_theme
 .pull-right45[
 
 
-```r
+``` r
 schoen + unschoen
 ```
 
@@ -901,7 +901,7 @@ schoen + unschoen
 &lt;br&gt;
 
 
-```r
+``` r
 # Speichere plots
 schoen &lt;- mein_plot
 unschoen &lt;- mein_plot + mein_theme
@@ -912,7 +912,7 @@ unschoen &lt;- mein_plot + mein_theme
 .pull-right45[
 
 
-```r
+``` r
 schoen | unschoen + schoen
 ```
 
@@ -943,7 +943,7 @@ schoen | unschoen + schoen
 &lt;br&gt;
 
 
-```r
+``` r
 # Speichere plots
 schoen &lt;- mein_plot
 unschoen &lt;- mein_plot + mein_theme
@@ -954,7 +954,7 @@ unschoen &lt;- mein_plot + mein_theme
 .pull-right45[
 
 
-```r
+``` r
 (schoen+schoen) / (schoen+schoen)
 ```
 
@@ -985,7 +985,7 @@ unschoen &lt;- mein_plot + mein_theme
 &lt;br&gt;
 
 
-```r
+``` r
 # Speichere plots
 schoen &lt;- mein_plot
 unschoen &lt;- mein_plot + mein_theme
@@ -996,7 +996,7 @@ unschoen &lt;- mein_plot + mein_theme
 .pull-right45[
 
 
-```r
+``` r
 (schoen+schoen) / (schoen+schoen) &amp;
   mein_theme
 ```
@@ -1028,7 +1028,7 @@ unschoen &lt;- mein_plot + mein_theme
 &lt;br&gt;
 
 
-```r
+``` r
 # Speichere plots
 schoen &lt;- mein_plot
 unschoen &lt;- mein_plot + mein_theme
@@ -1039,7 +1039,7 @@ unschoen &lt;- mein_plot + mein_theme
 .pull-right45[
 
 
-```r
+``` r
 (schoen+schoen) / (schoen+schoen) +
   plot_annotation(tag_levels = "A") &amp; 
   theme(legend.position = "none") 
@@ -1074,7 +1074,7 @@ unschoen &lt;- mein_plot + mein_theme
 .pull-right45[
 
 
-```r
+``` r
 # Kreiere meinen Plot
 mein_plot &lt;- ggplot(data = mpg,
                  aes(x = displ, y = hwy)) + 
@@ -1117,7 +1117,7 @@ ggsave(filename = "mein_plot.pdf",
 .pull-right45[
 
 
-```r
+``` r
 # Kreiere meinen Plot
 mein_plot &lt;- ggplot(data = mpg,
                  aes(x = displ, y = hwy)) + 
@@ -1141,7 +1141,7 @@ ggsave(filename = "mein_plot.png",
 
 class: middle, center
 
-&lt;h1&gt;&lt;a href="https://therbootcamp.github.io/EDA_2024Mar/_sessions/PlottingII/PlottingII_practical.html"&gt;Practical&lt;/a&gt;&lt;/h1&gt;
+&lt;h1&gt;&lt;a href="https://therbootcamp.github.io/DAAV_2025Jun/_sessions/PlottingII/PlottingII_practical.html"&gt;Practical&lt;/a&gt;&lt;/h1&gt;
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>

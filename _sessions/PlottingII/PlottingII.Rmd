@@ -1,21 +1,21 @@
 ---
 title: "Plotting II"
-author: "Explorative Datenanalyse mit R<br>
+author: "Daten aufbereiten, analysieren und visualisieren mit R<br>
   <a href='https://therbootcamp.github.io'>The R Bootcamp</a>
   <br>
-  <a href='https://therbootcamp.github.io/EDA_2024Mar/'>
+  <a href='https://therbootcamp.github.io/DAAV_2025Jun/'>
     <i class='fas fa-clock' style='font-size:.9em;'></i>
   </a>&#8239; 
   <a href='https://therbootcamp.github.io'>
     <i class='fas fa-home' style='font-size:.9em;' ></i>
   </a>&#8239;
-  <a href='mailto:therbootcamp@gmail.com'>
+  <a href='mailto:baselrbootcamp@gmail.com'>
     <i class='fas fa-envelope' style='font-size: .9em;'></i>
   </a>&#8239;
   <a href='https://www.linkedin.com/company/basel-r-bootcamp/'>
     <i class='fab fa-linkedin' style='font-size: .9em;'></i>
   </a>"
-date: "März 2024"
+date: "Juni 2025"
 output:
   xaringan::moon_reader:
     css: ["default", "baselrbootcamp.css"]
@@ -43,7 +43,7 @@ layout: true
     </a>
     <a href="https://therbootcamp.github.io/">
       <font color="#7E7E7E">
-       Explorative Datenanalyse mit R | März 2024
+       Daten aufbereiten, analysieren und visualisieren mit R | Juni 2025
       </font>
     </a>
     </span>
@@ -104,7 +104,7 @@ library(gridExtra)
 .pull-left45[
 
 <ul>
-  <li class="m1"><span>Die <mono>ggplot</mono> generiert ein <high><mono>gg</mono> Objekt</high>, dass gespeichert werden kann.</span></li>
+  <li class="m1"><span>Die <mono>ggplot</mono> Funktion generiert ein <high><mono>gg</mono> Objekt</high>, dass gespeichert werden kann.</span></li>
   <li class="m2"><span><mono>gg</mono> Objekte können durch <mono>+</mono> beliebig <high>verändert/erweitert</high> werden</span></li>
   <li class="m3"><span>Ausführen des Objekts generiert den Plot.</span></li>
 </ul>
@@ -136,7 +136,7 @@ mein_plot
 .pull-left45[
 
 <ul>
-  <li class="m1"><span>Die <mono>ggplot</mono> generiert ein <high><mono>gg</mono> Objekt</high>, dass gespeichert werden kann.</span></li>
+  <li class="m1"><span>Die <mono>ggplot</mono> Funktion generiert ein <high><mono>gg</mono> Objekt</high>, dass gespeichert werden kann.</span></li>
   <li class="m2"><span><mono>gg</mono> Objekte können durch <mono>+</mono> beliebig <high>verändert/erweitert</high> werden</span></li>
   <li class="m3"><span>Ausführen des Objekts generiert den Plot.</span></li>
 </ul>
@@ -1257,4 +1257,4 @@ ggsave(filename = "mein_plot.png",
 
 class: middle, center
 
-<h1><a href="https://therbootcamp.github.io/EDA_2024Mar/_sessions/PlottingII/PlottingII_practical.html">Practical</a></h1>
+<h1><a href="https://therbootcamp.github.io/DAAV_2025Jun/_sessions/PlottingII/PlottingII_practical.html">Practical</a></h1>
