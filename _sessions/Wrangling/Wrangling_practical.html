@@ -14,7 +14,7 @@
 
 <title>Wrangling</title>
 
-<script src="Wrangling_practical_files/header-attrs-2.29/header-attrs.js"></script>
+<script src="Wrangling_practical_files/header-attrs-2.27/header-attrs.js"></script>
 <script src="Wrangling_practical_files/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="Wrangling_practical_files/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
@@ -229,6 +229,7 @@ Ordner.</p></li>
 </ol>
 <pre class="r"><code># Pakete laden
 library(tidyverse)     </code></pre>
+<pre class="r"><code>library(tidyverse)</code></pre>
 </div>
 <div id="b---lade-den-datensatz" class="section level3">
 <h3>B - Lade den Datensatz</h3>
@@ -251,6 +252,12 @@ die Daten zu bekommen.</p></li>
 </ol>
 <pre class="r"><code># Zeige Spaltennamen
 names(XXX)</code></pre>
+<pre class="r"><code># Zeige Spaltennamen
+names(appointments)</code></pre>
+<pre><code> [1] &quot;PatientId&quot;      &quot;AppointmentID&quot;  &quot;Gender&quot;         &quot;ScheduledDay&quot;  
+ [5] &quot;AppointmentDay&quot; &quot;Age&quot;            &quot;Neighbourhood&quot;  &quot;Hypertension&quot;  
+ [9] &quot;Diabetes&quot;       &quot;Alcoholism&quot;     &quot;Handicap&quot;       &quot;SMS_received&quot;  
+[13] &quot;NoShow&quot;        </code></pre>
 <ol start="2" style="list-style-type: decimal">
 <li>Eine der Spalten hat aktuell den namen <code>Age</code>. Verwende
 <code>rename()</code> um den Namen in <code>alter_jahre</code> zu
@@ -260,11 +267,21 @@ handelt.</li>
 <pre class="r"><code># Ändere Age zu alter_jahre
 appointments &lt;- appointments %&gt;%
   rename(NEU = ALT)</code></pre>
+<pre class="r"><code># Ändere Age zu alter_jahre
+appointments &lt;- appointments %&gt;%
+  rename(alter_jahre = Age)</code></pre>
 <ol start="3" style="list-style-type: decimal">
-<li><p>Verwende nochmals <code>names()</code> um dir die Namen anzeigen
-zu lassen. Hat sich der Name geändert?</p></li>
-<li><p>Ergänze nun den Code unten, um alle Variablennamen ins Deutsche
-zu übersetzen.</p></li>
+<li>Verwende nochmals <code>names()</code> um dir die Namen anzeigen zu
+lassen. Hat sich der Name geändert?</li>
+</ol>
+<pre class="r"><code>names(appointments)</code></pre>
+<pre><code> [1] &quot;PatientId&quot;      &quot;AppointmentID&quot;  &quot;Gender&quot;         &quot;ScheduledDay&quot;  
+ [5] &quot;AppointmentDay&quot; &quot;alter_jahre&quot;    &quot;Neighbourhood&quot;  &quot;Hypertension&quot;  
+ [9] &quot;Diabetes&quot;       &quot;Alcoholism&quot;     &quot;Handicap&quot;       &quot;SMS_received&quot;  
+[13] &quot;NoShow&quot;        </code></pre>
+<ol start="4" style="list-style-type: decimal">
+<li>Ergänze nun den Code unten, um alle Variablennamen ins Deutsche zu
+übersetzen.</li>
 </ol>
 <pre class="r"><code>appointments &lt;- appointments %&gt;%
   rename(patient = XX,
@@ -279,6 +296,19 @@ zu übersetzen.</p></li>
          behinderung = XX,
          sms_erhalten = XX,
          termin_eingehalten = XX)</code></pre>
+<pre class="r"><code>appointments &lt;- appointments %&gt;%
+  rename(patient = PatientId,
+         termin_id = AppointmentID,
+         geschlecht = Gender,
+         termin_vereinbart = ScheduledDay,
+         termin_tag = AppointmentDay,
+         geburtsort = Neighbourhood,
+         bluthochdruck = Hypertension,
+         diabetes = Diabetes,
+         alkoholismus = Alcoholism,
+         behinderung = Handicap,
+         sms_erhalten = SMS_received,
+         termin_eingehalten = NoShow)</code></pre>
 <ol start="5" style="list-style-type: decimal">
 <li>Überprüfe mit <code>names()</code> ob alles stimmt.</li>
 </ol>
@@ -293,6 +323,9 @@ die Spalte <code>alter_monate</code>.</li>
 <pre class="r"><code># Alter in Monaten
 appointments &lt;- appointments %&gt;%
   mutate(XX = XX * 12)</code></pre>
+<pre class="r"><code># Alter in Monaten
+appointments &lt;- appointments %&gt;%
+  mutate(alter_monate = alter_jahre * 12)</code></pre>
 <ol start="2" style="list-style-type: decimal">
 <li>Verwende <code>mutate()</code>, um eine Spalte
 <code>krankheitsgrad</code> zu ergänzen, die anzeigt wie viele
@@ -304,6 +337,9 @@ Erkrankungen der Patient hat. Addiere hierzu die Spalten
 <pre class="r"><code># Kreiere Krankheitsgrad
 appointments &lt;- appointments %&gt;%
   mutate(XX = XX + XX + XX)</code></pre>
+<pre class="r"><code># Kreiere Krankheitsgrad
+appointments &lt;- appointments %&gt;%
+  mutate(krankheitsgrad = bluthochdruck + diabetes + alkoholismus)</code></pre>
 <ol start="3" style="list-style-type: decimal">
 <li>Verwende <code>mutate()</code> und <code>case_when()</code> um eine
 Spalte <code>schwer_krank</code> zu ergänzen, die <code>Ja</code>
@@ -315,6 +351,13 @@ appointments &lt;- appointments %&gt;%
   mutate(schwer_krank = case_when(
     XX &lt;= XX ~ &quot;Nein&quot;,
     XX  &gt; XX ~ &quot;Ja&quot;
+    )
+  )</code></pre>
+<pre class="r"><code># Kreiere schwer_krank
+appointments &lt;- appointments %&gt;%
+  mutate(schwer_krank = case_when(
+    krankheitsgrad &lt;= 1 ~ &quot;Nein&quot;,
+    krankheitsgrad  &gt; 1 ~ &quot;Ja&quot;
     )
   )</code></pre>
 <ol start="4" style="list-style-type: decimal">
@@ -331,6 +374,13 @@ appointments &lt;- appointments %&gt;%
     XX == XX ~ XX
     )
   )</code></pre>
+<pre class="r"><code># Verändere geschlecht
+appointments &lt;- appointments %&gt;%
+  mutate(geschlecht = case_when(
+    geschlecht == &quot;M&quot; ~ &quot;männlich&quot;,
+    geschlecht == &quot;F&quot; ~ &quot;weiblich&quot;
+    )
+  )</code></pre>
 <ol start="5" style="list-style-type: decimal">
 <li>Verwende <code>mutate()</code> und <code>case_when()</code> um
 <code>No</code> und <code>Yes</code> in der Spalte
@@ -343,6 +393,13 @@ appointments &lt;- appointments %&gt;%
   mutate(XX = case_when(
     XX == XX ~ XX,
     XX == XX ~ XX
+    )
+  )</code></pre>
+<pre class="r"><code># Termin eingehalten Yes = 1, No = 0
+appointments &lt;- appointments %&gt;%
+  mutate(termin_eingehalten_01 = case_when(
+    termin_eingehalten == &quot;No&quot; ~ 0,
+    termin_eingehalten == &quot;Yes&quot; ~ 1,
     )
   )</code></pre>
 <ol start="6" style="list-style-type: decimal">
@@ -360,12 +417,45 @@ appointments %&gt;%
   filter(XX != XX) %&gt;%
   pull(XX) %&gt;% 
   mean()</code></pre>
+<pre class="r"><code># Anteil nicht wahrgenommener Termine
+appointments %&gt;%
+  filter(schwer_krank == &quot;Ja&quot;) %&gt;%
+  pull(termin_eingehalten_01) %&gt;%
+  mean()</code></pre>
+<pre><code>[1] 0.177</code></pre>
+<pre class="r"><code>appointments %&gt;%
+  filter(schwer_krank != &quot;Ja&quot;) %&gt;%
+  pull(termin_eingehalten_01) %&gt;%
+  mean()</code></pre>
+<pre><code>[1] 0.204</code></pre>
 <ol start="7" style="list-style-type: decimal">
 <li>Vergleiche nun, ob es in den wahrgenommenen Terminen vielleicht
 Unterschiede zwischen Männern und Frauen gibt und ob es Unterschiede
 zwischen Patienten gibt, die mehr oder weniger als 360 Monate alt
 sind.</li>
 </ol>
+<pre class="r"><code># Anteil nicht wahrgenommener Termine
+appointments %&gt;%
+  filter(geschlecht == &quot;männlich&quot;) %&gt;%
+  pull(termin_eingehalten_01) %&gt;%
+  mean()</code></pre>
+<pre><code>[1] 0.2</code></pre>
+<pre class="r"><code>appointments %&gt;%
+  filter(geschlecht != &quot;männlich&quot;) %&gt;%
+  pull(termin_eingehalten_01) %&gt;%
+  mean()</code></pre>
+<pre><code>[1] 0.203</code></pre>
+<pre class="r"><code># Anteil nicht wahrgenommener Termine
+appointments %&gt;%
+  filter(alter_monate &gt;= 360) %&gt;%
+  pull(termin_eingehalten_01) %&gt;%
+  mean()</code></pre>
+<pre><code>[1] 0.184</code></pre>
+<pre class="r"><code>appointments %&gt;%
+  filter(alter_monate &lt; 360) %&gt;%
+  pull(termin_eingehalten_01) %&gt;%
+  mean()</code></pre>
+<pre><code>[1] 0.229</code></pre>
 </div>
 <div id="e---organisieren-mit-select-filter-slice-und-arrange"
 class="section level3">
@@ -381,6 +471,9 @@ auszuwählen. Speichere den resultierenden data frame als
 <pre class="r"><code># Wähle Spalten aus
 appointments_reduziert &lt;- appointments %&gt;%
   select(XX, XX, XX, XX, XX)</code></pre>
+<pre class="r"><code># Wähle Spalten aus
+appointments_reduziert &lt;- appointments %&gt;%
+  select(patient, geschlecht, alter_jahre, krankheitsgrad, termin_eingehalten_01)</code></pre>
 <ol start="2" style="list-style-type: decimal">
 <li><p>Printe <code>appointments_reduziert</code>. Sind die richtigen
 Spalten enthalten?</p></li>
@@ -391,6 +484,10 @@ Patient weiblich ist. Ergänze hierzu direkt die Pipeline.</p></li>
 appointments_reduziert &lt;- appointments %&gt;%
   select(XX, XX, XX, XX, XX) %&gt;%
   filter(XX == XX)</code></pre>
+<pre class="r"><code># Wähle Fälle aus
+appointments_reduziert &lt;- appointments %&gt;%
+  select(patient, geschlecht, alter_jahre, krankheitsgrad, termin_eingehalten_01) %&gt;%
+  filter(geschlecht == &#39;weiblich&#39;)</code></pre>
 <ol start="4" style="list-style-type: decimal">
 <li><p>Printe <code>appointments_reduziert$geschlecht</code>. Sind noch
 Männer enthalten?</p></li>
@@ -402,6 +499,11 @@ appointments_reduziert &lt;- appointments %&gt;%
   select(XX, XX, XX, XX, XX) %&gt;%
   filter(XX == XX,
          XX &gt; XX)</code></pre>
+<pre class="r"><code># Wähle Fälle aus
+appointments_reduziert &lt;- appointments %&gt;%
+  select(patient, geschlecht, alter_jahre, krankheitsgrad, termin_eingehalten_01) %&gt;%
+  filter(geschlecht == &#39;weiblich&#39;,
+         alter_jahre &gt; 30)</code></pre>
 <ol start="6" style="list-style-type: decimal">
 <li><p>Printe <code>appointments_reduziert$alter_jahre</code>. Sind noch
 Jüngere enthalten?</p></li>
@@ -415,6 +517,12 @@ appointments_reduziert &lt;- appointments %&gt;%
   filter(XX == XX,
          XX &gt; XX) %&gt;%
   arrange(XX)</code></pre>
+<pre class="r"><code># Wähle Fälle aus
+appointments_reduziert &lt;- appointments %&gt;%
+  select(patient, geschlecht, alter_jahre, krankheitsgrad, termin_eingehalten_01) %&gt;%
+  filter(geschlecht == &#39;weiblich&#39;,
+         alter_jahre &gt; 30) %&gt;%
+  arrange(alter_jahre)</code></pre>
 <ol start="8" style="list-style-type: decimal">
 <li><p>Printe <code>appointments_reduziert</code> und
 <code>appointments_reduziert$alter_jahre</code>. Ist alles schön
@@ -429,6 +537,12 @@ appointments_reduziert &lt;- appointments %&gt;%
   filter(XX == XX,
          XX &gt; XX) %&gt;%
   arrange(desc(XX))</code></pre>
+<pre class="r"><code># Wähle Fälle aus
+appointments_reduziert &lt;- appointments %&gt;%
+  select(patient, geschlecht, alter_jahre, krankheitsgrad, termin_eingehalten_01) %&gt;%
+  filter(geschlecht == &#39;weiblich&#39;,
+         alter_jahre &gt; 30) %&gt;%
+  arrange(desc(alter_jahre))</code></pre>
 <ol start="10" style="list-style-type: decimal">
 <li><p>Printe <code>appointments_reduziert</code> und
 <code>appointments_reduziert$alter_jahre</code>. Ist alles schön
@@ -444,6 +558,13 @@ appointments_reduziert &lt;- appointments %&gt;%
          XX &gt; XX) %&gt;%
   arrange(desc(XX),
           desc(XX))</code></pre>
+<pre class="r"><code># Wähle Fälle aus
+appointments_reduziert &lt;- appointments %&gt;%
+  select(patient, geschlecht, alter_jahre, krankheitsgrad, termin_eingehalten_01) %&gt;%
+  filter(geschlecht == &#39;weiblich&#39;,
+         alter_jahre &gt; 30) %&gt;%
+  arrange(desc(alter_jahre),
+          desc(krankheitsgrad))</code></pre>
 <ol start="12" style="list-style-type: decimal">
 <li><p>Printe <code>appointments_reduziert</code> und
 <code>appointments_reduziert$krankheitsgrad</code>. Ist alles schön
@@ -459,6 +580,13 @@ appointments_reduziert &lt;- appointments %&gt;%
          XX &gt; XX) %&gt;%
   arrange(desc(XX),
           desc(XX))</code></pre>
+<pre class="r"><code># Wähle Fälle aus
+appointments_reduziert &lt;- appointments %&gt;%
+  select(patient, geschlecht, alter_jahre, krankheitsgrad, termin_eingehalten_01) %&gt;%
+  filter(geschlecht == &#39;weiblich&#39;,
+         alter_jahre &gt; 30) %&gt;%
+  arrange(desc(krankheitsgrad),
+          desc(alter_jahre))</code></pre>
 <ol start="14" style="list-style-type: decimal">
 <li>Verwende <code>slice()</code> um die ersten zwanzig Fälle in
 <code>appointments_reduziert</code> auszuwählen. Ergänze die
@@ -472,6 +600,14 @@ appointments_reduziert &lt;- appointments %&gt;%
   arrange(desc(XX),
           desc(XX)) %&gt;%
   slice(XX:XX)</code></pre>
+<pre class="r"><code># Wähle Fälle aus
+appointments_reduziert &lt;- appointments %&gt;%
+  select(patient, geschlecht, alter_jahre, krankheitsgrad, termin_eingehalten_01) %&gt;%
+  filter(geschlecht == &#39;weiblich&#39;,
+         alter_jahre &gt; 30) %&gt;%
+  arrange(desc(krankheitsgrad),
+          desc(alter_jahre)) %&gt;%
+  slice(1:20)</code></pre>
 <ol start="15" style="list-style-type: decimal">
 <li>Printe <code>appointments_reduziert</code>. Sind es nun 20 Fälle?
 Sind die ausgewählten Fälle zum Termin erschienen?</li>
@@ -499,6 +635,11 @@ weather_reduziert &lt;- weather %&gt;%
   select(XX, XX) %&gt;%
   rename(XX = XX,
          XX = XX) </code></pre>
+<pre class="r"><code># Verarbeite weather
+weather_reduziert &lt;- weather %&gt;%
+  select(YYYYMMDD, PRECTOT) %&gt;%
+  rename(termin_tag = YYYYMMDD,
+         niederschlag = PRECTOT) </code></pre>
 <ol start="5" style="list-style-type: decimal">
 <li><p>Printe <code>weather_reduziert</code>. Ist alles wie
 gewünscht?</p></li>
@@ -512,6 +653,10 @@ verbinden. Nenne den gemeinsamen Datensatz
 appointments_weather &lt;- appointments %&gt;%
   select(XX, XX) %&gt;%
   left_join(XX)</code></pre>
+<pre class="r"><code># Verbinde Datensätze
+appointments_weather &lt;- appointments %&gt;%
+  select(termin_tag, termin_eingehalten) %&gt;%
+  left_join(weather_reduziert)</code></pre>
 <ol start="7" style="list-style-type: decimal">
 <li><p>Printe <code>appointments_weather</code>. Ist alles in
 Ordnung?</p></li>
@@ -524,6 +669,11 @@ appointments_weather &lt;- appointments %&gt;%
   select(XX, XX) %&gt;%
   left_join(XX) %&gt;%
   select(XX, XX, XX)</code></pre>
+<pre class="r"><code># Verbinde Datensätze
+appointments_weather &lt;- appointments %&gt;%
+  select(termin_tag, termin_eingehalten) %&gt;%
+  left_join(weather_reduziert) %&gt;%
+  select(termin_tag, niederschlag, termin_eingehalten)</code></pre>
 <ol start="9" style="list-style-type: decimal">
 <li><p>Printe <code>appointments_weather</code>. Ist alles in
 Ordnung?</p></li>
@@ -548,6 +698,21 @@ appointments_weather &lt;- appointments %&gt;%
       XX &gt; 0 ~ 1,
       )
   )</code></pre>
+<pre class="r"><code># Verbinde Datensätze
+appointments_weather &lt;- appointments %&gt;%
+  select(termin_tag, termin_eingehalten) %&gt;%
+  left_join(weather_reduziert) %&gt;%
+  select(termin_tag, niederschlag, termin_eingehalten) %&gt;%
+  mutate(
+    termin_eingehalten_01 = case_when(
+      termin_eingehalten == &quot;No&quot; ~ 0,
+      termin_eingehalten == &quot;Yes&quot; ~ 1,
+      ),
+    niederschlag_01 = case_when(
+      niederschlag == 0 ~ 0,
+      niederschlag &gt; 0 ~ 1,
+      )
+    )</code></pre>
 <ol start="11" style="list-style-type: decimal">
 <li><p>Printe <code>appointments_weather</code>. Ist alles in
 Ordnung?</p></li>
@@ -564,6 +729,17 @@ appointments_weather %&gt;%
   filter(XX != XX) %&gt;%
   pull(XX) %&gt;%
   mean()</code></pre>
+<pre class="r"><code># Anteil nicht wahrgenommener Termine
+appointments_weather %&gt;%
+  filter(niederschlag_01 == 1) %&gt;%
+  pull(termin_eingehalten_01) %&gt;%
+  mean()</code></pre>
+<pre><code>[1] 0.201</code></pre>
+<pre class="r"><code>appointments_weather %&gt;%
+  filter(niederschlag_01 != 1) %&gt;%
+  pull(termin_eingehalten_01) %&gt;%
+  mean()</code></pre>
+<pre><code>[1] 0.23</code></pre>
 </div>
 <div id="x---challenge" class="section level3">
 <h3>X - Challenge</h3>
@@ -626,7 +802,7 @@ basel %&gt;%
 <col width="28%" />
 </colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th align="left">Datei</th>
 <th align="left">Zeilen</th>
 <th align="left">Spalten</th>
@@ -634,14 +810,14 @@ basel %&gt;%
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td align="left"><a
 href="https://github.com/therbootcamp/R4DS_2019Feb/blob/master/1_Data/appointments.csv?raw=true">appointments.csv</a></td>
 <td align="left">110526</td>
 <td align="left">13</td>
 <td align="left">Datensatz zu eingehalten Arztterminen in Brasilien</td>
 </tr>
-<tr class="even">
+<tr>
 <td align="left"><a
 href="https://github.com/therbootcamp/R4DS_2019Feb/blob/master/1_Data/weather.csv?raw=true">weather.csv</a></td>
 <td align="left">41</td>
@@ -671,7 +847,7 @@ in <code>appointments.csv</code></td>
 <col width="4%" />
 </colgroup>
 <thead>
-<tr class="header">
+<tr>
 <th align="right">PatientId</th>
 <th align="right">AppointmentID</th>
 <th align="left">Gender</th>
@@ -688,7 +864,7 @@ in <code>appointments.csv</code></td>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td align="right">2.99e+13</td>
 <td align="right">5642903</td>
 <td align="left">F</td>
@@ -703,7 +879,7 @@ in <code>appointments.csv</code></td>
 <td align="left">FALSE</td>
 <td align="left">No</td>
 </tr>
-<tr class="even">
+<tr>
 <td align="right">5.59e+14</td>
 <td align="right">5642503</td>
 <td align="left">M</td>
@@ -718,7 +894,7 @@ in <code>appointments.csv</code></td>
 <td align="left">FALSE</td>
 <td align="left">No</td>
 </tr>
-<tr class="odd">
+<tr>
 <td align="right">4.26e+12</td>
 <td align="right">5642549</td>
 <td align="left">F</td>
@@ -733,7 +909,7 @@ in <code>appointments.csv</code></td>
 <td align="left">FALSE</td>
 <td align="left">No</td>
 </tr>
-<tr class="even">
+<tr>
 <td align="right">8.68e+11</td>
 <td align="right">5642828</td>
 <td align="left">F</td>
@@ -748,7 +924,7 @@ in <code>appointments.csv</code></td>
 <td align="left">FALSE</td>
 <td align="left">No</td>
 </tr>
-<tr class="odd">
+<tr>
 <td align="right">8.84e+12</td>
 <td align="right">5642494</td>
 <td align="left">F</td>
@@ -767,61 +943,61 @@ in <code>appointments.csv</code></td>
 </table>
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th align="left">Variable</th>
 <th align="left">Beschreibung</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td align="left">PatientId</td>
 <td align="left">ID des Patienten</td>
 </tr>
-<tr class="even">
+<tr>
 <td align="left">AppointmentID</td>
 <td align="left">ID des Arzttermins</td>
 </tr>
-<tr class="odd">
+<tr>
 <td align="left">Gender</td>
 <td align="left">M = Männlich, F = Weiblich</td>
 </tr>
-<tr class="even">
+<tr>
 <td align="left">ScheduledDay</td>
 <td align="left">Der Tag an dem der Termin vereinbart wurde</td>
 </tr>
-<tr class="odd">
+<tr>
 <td align="left">AppointmentDay</td>
 <td align="left">Der Tag des Arzttermins</td>
 </tr>
-<tr class="even">
+<tr>
 <td align="left">Age</td>
 <td align="left">Wie alt ist der Patient</td>
 </tr>
-<tr class="odd">
+<tr>
 <td align="left">Neighbourhood</td>
 <td align="left">Wo wurde der Patient geboren</td>
 </tr>
-<tr class="even">
+<tr>
 <td align="left">Hypertension</td>
 <td align="left">Bluthochdruck Ja, Nein</td>
 </tr>
-<tr class="odd">
+<tr>
 <td align="left">Diabetes</td>
 <td align="left">Diabetes Ja, Nein</td>
 </tr>
-<tr class="even">
+<tr>
 <td align="left">Alcoholism</td>
 <td align="left">Alcoholismus Ja, Nein</td>
 </tr>
-<tr class="odd">
+<tr>
 <td align="left">Handcap</td>
 <td align="left">Behinderung - Stufen 1 bis 4, 1 niedrigstes Level</td>
 </tr>
-<tr class="even">
+<tr>
 <td align="left">SMS_received</td>
 <td align="left">Hat der Patient eine Erinnerung per SMS erhalten?</td>
 </tr>
-<tr class="odd">
+<tr>
 <td align="left">No-show</td>
 <td align="left">Ist der Patient zum Termin erschienen?</td>
 </tr>
@@ -833,7 +1009,7 @@ in <code>appointments.csv</code></td>
 <p><em>Erste 5 Zeilen von weather.csv</em></p>
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th align="right">LON</th>
 <th align="right">LAT</th>
 <th align="right">YEAR</th>
@@ -847,7 +1023,7 @@ in <code>appointments.csv</code></td>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td align="right">20.3</td>
 <td align="right">40.3</td>
 <td align="right">2016</td>
@@ -859,7 +1035,7 @@ in <code>appointments.csv</code></td>
 <td align="right">11.57</td>
 <td align="right">6.18</td>
 </tr>
-<tr class="even">
+<tr>
 <td align="right">20.3</td>
 <td align="right">40.3</td>
 <td align="right">2016</td>
@@ -871,7 +1047,7 @@ in <code>appointments.csv</code></td>
 <td align="right">14.02</td>
 <td align="right">0.04</td>
 </tr>
-<tr class="odd">
+<tr>
 <td align="right">20.3</td>
 <td align="right">40.3</td>
 <td align="right">2016</td>
@@ -883,7 +1059,7 @@ in <code>appointments.csv</code></td>
 <td align="right">12.98</td>
 <td align="right">4.48</td>
 </tr>
-<tr class="even">
+<tr>
 <td align="right">20.3</td>
 <td align="right">40.3</td>
 <td align="right">2016</td>
@@ -895,7 +1071,7 @@ in <code>appointments.csv</code></td>
 <td align="right">11.41</td>
 <td align="right">22.99</td>
 </tr>
-<tr class="odd">
+<tr>
 <td align="right">20.3</td>
 <td align="right">40.3</td>
 <td align="right">2016</td>
@@ -911,49 +1087,49 @@ in <code>appointments.csv</code></td>
 </table>
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th align="left">Variable</th>
 <th align="left">Beschreibung</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td align="left">LON</td>
 <td align="left">Längengrad</td>
 </tr>
-<tr class="even">
+<tr>
 <td align="left">LAT</td>
 <td align="left">Breitengrad</td>
 </tr>
-<tr class="odd">
+<tr>
 <td align="left">YEAR</td>
 <td align="left">Jahr</td>
 </tr>
-<tr class="even">
+<tr>
 <td align="left">MM</td>
 <td align="left">Monat</td>
 </tr>
-<tr class="odd">
+<tr>
 <td align="left">DD</td>
 <td align="left">Tag</td>
 </tr>
-<tr class="even">
+<tr>
 <td align="left">DOY</td>
 <td align="left">Tag des Jahres</td>
 </tr>
-<tr class="odd">
+<tr>
 <td align="left">YYYYMMDD</td>
 <td align="left">Datum</td>
 </tr>
-<tr class="even">
+<tr>
 <td align="left">RH2M</td>
 <td align="left">Relative Feuchtigkeit auf 2 Metern</td>
 </tr>
-<tr class="odd">
+<tr>
 <td align="left">T2M</td>
 <td align="left">Temperatur auf 2 Metern</td>
 </tr>
-<tr class="even">
+<tr>
 <td align="left">PRECTOT</td>
 <td align="left">Niederschlag</td>
 </tr>
@@ -967,13 +1143,13 @@ in <code>appointments.csv</code></td>
 <h3>Pakete</h3>
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th align="left">Package</th>
 <th align="left">Installation</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td align="left"><code>tidyverse</code></td>
 <td align="left"><code>install.packages("tidyverse")</code></td>
 </tr>
@@ -984,39 +1160,39 @@ in <code>appointments.csv</code></td>
 <h3>Funktionen</h3>
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th align="left">Function</th>
 <th align="left">Package</th>
 <th align="left">Description</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td align="left"><code>rename()</code></td>
 <td align="left"><code>dplyr</code></td>
 <td align="left">Spalten umbenennen</td>
 </tr>
-<tr class="even">
+<tr>
 <td align="left"><code>select()</code></td>
 <td align="left"><code>dplyr</code></td>
 <td align="left">Spalten auswählen</td>
 </tr>
-<tr class="odd">
+<tr>
 <td align="left"><code>filter()</code>, <code>slice()</code></td>
 <td align="left"><code>dplyr</code></td>
 <td align="left">Fälle auswählen</td>
 </tr>
-<tr class="even">
+<tr>
 <td align="left"><code>arrange()</code></td>
 <td align="left"><code>dplyr</code></td>
 <td align="left">Fälle sortieren</td>
 </tr>
-<tr class="odd">
+<tr>
 <td align="left"><code>mutate()</code></td>
 <td align="left"><code>dplyr</code></td>
 <td align="left">Spalten verändern / kreieren</td>
 </tr>
-<tr class="even">
+<tr>
 <td align="left"><code>case_when()</code></td>
 <td align="left"><code>dplyr</code></td>
 <td align="left">Rekodiere Spalten</td>
