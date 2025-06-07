@@ -36,8 +36,8 @@ knitr::opts_chunk$set(comment = NA,
                       fig.width = 6, 
                       fig.height = 6,
                       fig.align = 'center',
-                      echo = FALSE, 
-                      eval = FALSE, 
+                      echo = TRUE, 
+                      eval = TRUE, 
                       warning = FALSE, 
                       message = FALSE)
 
@@ -275,7 +275,7 @@ ggplot(data = mcdonalds, aes(x = XX, y = XX, fill = XX)) +
   geom_violin() +
   labs(title = "XX",
        subtitle = "XX") + 
-  guides(fill = FALSE)
+  guides(fill = "none")
 ```
 
 ```{r, fig.width = 8, fig.height = 3}
@@ -283,7 +283,7 @@ ggplot(data = mcdonalds, aes(x = Category, y = Calories, fill = Category)) +
   geom_violin() +
   labs(title = "McDonalds",
        subtitle = "Kalorienverteilung pro Menü Kategorie") +
-  guides(fill = FALSE)
+  guides(fill = "none")
 ```
 
 4. Verwende `geom_jitter()` um Punkte über die Violinen zu plotten. Setze in der Funktion `width = 1` und `alpha = .5`.
